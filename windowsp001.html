@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- All comments sould be changed-->
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Domain erstellen und Devices hinzufügen mit PowerShell">
+    <meta name="description" content="">
+    <meta name="robots" content="noindex">
+    <title>Domain erstellen und Devices hinzufügen mit PowerShell Windows-Server</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+    <link rel="stylesheet" href="windowsp001.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" "="" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" "="" defer=""></script>
+    <meta name="generator" content="Nicepage 4.16.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "dulukch"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Windows Server">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-overlap u-overlap-contrast u-overlap-transparent u-xl-mode" data-lang="en"><header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-202b"><div class="u-clearfix u-sheet u-sheet-1">
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Home.html" style="padding: 10px 20px;">Home</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">Home</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header> 
+    <section class="u-clearfix u-custom-color-1 u-section-1" id="sec-17f1">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-align-center u-text u-text-default u-text-1">Domain erstellen und Devices hinzufügen mit PowerShell Windows-Server</h1>
+      </div>
+    </section>
+    
+    <section class="u-align-center u-clearfix u-section-2" id="sec-afcb">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-sheet u-sheet-1">
+          <p class="u-align-center u-large-text u-text u-text-default u-text-variant u-text-2"></p>
+          <h3 class="u-align-center u-text u-text-default u-text-3">Schritt 1 — ADDS Services ausgeben</h3>
+          <p class="u-large-text u-text u-text-variant u-text-4"> Mit dem Cmdlet "Get-WindowsFeature" werden Informationen zu Features abgerufen, die sowohl zur Installation verfügbar als auch bereits auf einem Computer mit Windows Server oder einer virtuellen Offline-Festplatte (VHD) mit Windows Server installiert sind.</p>
+          <div class="u-container-style u-grey-75 u-group u-group-1">
+            <div class="u-container-layout u-container-layout-1">
+              <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-5">Get-WindowsFeature -Name *ADDS*</h5>
+            </div>
+          </div>
+          <h3 class="u-align-center u-text u-text-default u-text-6">Schritt 2 - Installieren von ADDS</h3>
+          <p class="u-large-text u-text u-text-variant u-text-7">Das Cmdlet "Install-WindowsFeature" installiert die angegebenen Features auf einem Computer, auf dem Windows Server ausgeführt wird, oder auf einer virtuellen Offline-Festplatte (VHD), auf der Windows Server installiert ist. Dieses Cmdlet funktioniert ähnlich wie die Installation von Rollen und Features in Server Manager, mit einer wichtigen Ausnahme: Das Cmdlet installiert standardmäßig keine Verwaltungstools für die Features. Um Verwaltungstools wie Snap-Ins auf einem Zielserver zu installieren, müssen Sie den Parameter IncludeManagementTools zu Ihrem Befehl hinzufügen.</p>
+          <div class="u-container-style u-grey-75 u-group u-group-2">
+            <div class="u-container-layout u-container-layout-2">
+              <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-8">Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools</h5>
+            </div>
+          </div>
+          <h3 class="u-align-center u-text u-text-default u-text-9">Schritt 3 - Eigene Domain erstellen</h3>
+          <p class="u-large-text u-text u-text-variant u-text-10">Mit dem Cmdlet "Install-ADDSForest" wird eine Active Directory-Gesamtkonfiguration installiert. "-InstallDNS gibt" an, dass mit diesem Cmdlet der DNS-Serverdienst für den neuen Forest installiert und konfiguriert wird. "-NoRebootOnCompletion" gibt an, dass das Cmdlet den Computer nach Abschluss des Befehls nicht neu startet. Wenn Sie diesen Parameter weglassen, wird der Computer nach Abschluss des Befehls neu gestartet, unabhängig von Erfolg oder Misserfolg. Diesen Cmdlet kannst du auch weglassen (im nächsten Schritt starten wir den Server neu)</p>
+          <div class="u-container-style u-grey-75 u-group u-group-3">
+            <div class="u-container-layout u-container-layout-3">
+              <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-11">Install-ADDSForest -DomainName "meineDomain.com" -InstallDns:$ture -NoRebootOnCompletion:$true</h5>
+            </div>
+          </div>
+          <h3 class="u-align-center u-text u-text-default u-text-12">Schritt 4 - Server neu starten</h3>
+          <p class="u-large-text u-text u-text-variant u-text-13">Mit "Restart-Computer" wird der Server neu gestartet</p>
+          <div class="u-container-style u-grey-75 u-group u-group-4">
+            <div class="u-container-layout u-container-layout-4">
+              <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-14">Restart-Computer</h5>
+            </div>
+          </div>
+          <h3 class="u-align-center u-text u-text-default u-text-15">Schritt 5 - Lokaler Computer zur Domain hinzufügen</h3>
+          <p class="u-large-text u-text u-text-variant u-text-16">Das Cmdlet "Add-Computer" fügt den lokalen Computer oder Remotecomputer zu einer Domäne oder Arbeitsgruppe hinzu oder verschiebt sie von einer Domäne in eine andere. Es erstellt auch ein Domänenkonto, wenn der Computer der Domäne ohne ein Konto hinzugefügt wird.</p>
+          <h5 class="u-large-text u-text u-text-variant u-text-17">Lokal:</h5>
+          <div class="u-container-style u-grey-75 u-group u-group-5">
+            <div class="u-container-layout u-container-layout-5">
+              <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-18">Add-Computer -DomainName meineDomain.com -Restart</h5>
+            </div>
+          </div>
+          <h5 class="u-large-text u-text u-text-variant u-text-19">Remote:</h5>
+          <div class="u-container-style u-grey-75 u-group u-group-6">
+            <div class="u-container-layout u-container-layout-6">
+              <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-20">Add-Computer -ComputerName SVName01 -DomainName meineDomain.com -Restart</h5>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-cedd"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">
+          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" href="Impressum.html" data-page-id="940817149">Impressum</a>
+        </p>
+        <p class="u-small-text u-text u-text-variant u-text-2">
+          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2" href="Datenschutz.html" data-page-id="815508188">Datenschutz</a>
+        </p>
+      </div></footer>
+    
+</body></html>
