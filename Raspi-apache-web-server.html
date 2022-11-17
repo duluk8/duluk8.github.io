@@ -33,6 +33,7 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Raspberry-Pi-Projects.html" style="padding: 10px 20px;">Zurück</a>
             <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Home.html" style="padding: 10px 20px;">Home</a>
 </li></ul>
           </div>
@@ -50,50 +51,50 @@
       </div></header>
     <section class="u-clearfix u-custom-color-1 u-section-1" id="sec-08c5">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-align-center u-text u-text-default u-text-1">Install Apache Web Server on a Raspberry Pi</h1>
-        <h3 class="u-align-center u-text u-text-default u-text-2"> Requirements</h3>
-        <p class="u-align-center u-text u-text-default u-text-3">Raspberry Pi&nbsp;<br>SD Card<br>LAN or Wireless connection<br>Power supply&nbsp;&nbsp;<br>At least one screen, keyboard and a mouse <br>A device that can read SD cards<br>
+        <h1 class="u-align-center u-text u-text-default u-text-1">Installiere Apache Web Server auf einem Raspberry Pi</h1>
+        <h3 class="u-align-center u-text u-text-default u-text-2"> Voraussetzungen</h3>
+        <p class="u-align-center u-text u-text-default u-text-3">Raspberry Pi&nbsp;<br>SD Karte<br>LAN oder Wireless Verbindung<br>Stromversorgung&nbsp;&nbsp;<br>Mindestens einen Bildschrim, Tastatur und eine Maus<br>Laptop/PC der SD-Karten lesen kann<br>
           <br>
         </p>
-        <h3 class="u-align-center u-text u-text-default u-text-4">Step 1: Installing OS</h3>
-        <p class="u-align-center u-text u-text-default u-text-5">Install the <a href="https://www.raspberrypi.com/software/" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" target="_blank">Raspberry Pi Imager</a>&nbsp;lunch the&nbsp;imager_1.7.2.exe an click install.<br>
-          <br>Open the imager then click choose OS &gt; Raspberry Pi OS (other). We will go<br>with a Raspbarry Pi OS Lite(64bit) if you dont't have a Raspberry 3/4/400 then go with<br>a Raspberry Pi OS Lite(32bit).<br>So now we have choosen the OS. Next we will choose our Storage (SD card) after that we click write.<br>This might take a few minutes depend on your computer.
+        <h3 class="u-align-center u-text u-text-default u-text-4">Schritt 1: OS installieren</h3>
+        <p class="u-align-center u-text u-text-default u-text-5">Installiere den <a href="https://www.raspberrypi.com/software/" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" target="_blank">Raspberry Pi Imager</a>&nbsp;führe die&nbsp;imager_1.7.2.exe aus.<br>
+          <br>Öffne den Imager und klicke auf "OS auswählen" (choose OS) &gt; Raspberry Pi OS (other).<br>Wir werden das Raspbarry Pi OS Lite(64bit) nehmen, wenn du kein Raspberry Pi 3/4/400 hast,<br> dann nimm das Raspberry Pi OS Lite(32bit). Jetzt haben wir das OS ausgewählt.<br> Als nächstes wählen wir den Speicher (SD-Karte) aus, danach auf "write" klicken.<br>Je nach Computer kann dies einige Minuten in anspruch nehmen.
         </p>
         <img class="u-image u-image-default u-image-1" src="images/InkedScreenshot2022-05-26140226_LI.jpg" alt="" data-image-width="1600" data-image-height="863">
-        <p class="u-align-center u-text u-text-default u-text-6">So now you have sucsessfully installed the raspberry Pi OS.<br>Take your raspi and plug the SD Car (or your other Storage) with the OS in.&nbsp;Make sure the raspi<br>is connected to your screen and keyboard. So now you can connect the raspi with the power.<br>It will boot and after a few seconds you have the OS with the command line on your raspi.<br>
+        <p class="u-align-center u-text u-text-default u-text-6">Nun haben wir das Raspberry Pi OS erfolgreich installiert.<br>Nimm dein Raspi und stecke die SD-Karte (oder dein Speicher) mit dem OS ein.&nbsp;Stelle sicher,<br> dass dein Raspi mit dem Blidschrim und der Maus verbunden ist.<br> Nun kannst du dein Raspi mit dem Strom verbinden.<br> Der Raspi bootet und nach ein paar Sekunden, haben wir das OS mit der Command Line auf unserem Raspi.<br>
           <br>
         </p>
-        <h3 class="u-align-center u-text u-text-default u-text-7">Step 2: Setup the apache web server</h3>
-        <p class="u-align-center u-text u-text-default u-text-8">Now we will install <a href="https://www.apache.org/" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2" target="_blank">Apache Web Server</a> on the raspi. First we make sure we are up to date with these tow command:<br>
+        <h3 class="u-align-center u-text u-text-default u-text-7">Schritt 2: Aufsetzen des Apache Web Servers</h3>
+        <p class="u-align-center u-text u-text-default u-text-8">Nun werden wir den <a href="https://www.apache.org/" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2" target="_blank">Apache Web Server</a> auf unserem Raspi installieren.<br> Zunächst stellen wir sicher mit den folgenden Befehlen, dass wir auf dem neusten Stand sind:<br>
           <br>
           <span class="u-text-palette-2-dark-1">sudo apt-get update<br>sudo apt-get upgrade
           </span>
           <br>
-          <br>When it is done, we are up to date and can move on with the next command.<br>
+          <br>Nun sind wir auf dem neusten Stand und können mit dem nächsten Command weitermachen.<br>
           <br>
           <span class="u-text-palette-2-dark-1">sudo apt install apache2 -y</span>
           <br>
-          <br>With this command you will install Apache Web Server on your Raspberry Pi. Nice! You have your own Web Server,<br>so you can now host your own website.&nbsp; ​To check if the web server is running, you can enter your IP in your browser.<br> Enter this command in your command line:<br>
+          <br>Mit diesem Command installieren wir den Apache Web Server auf unserem Raspberry Pi.<br> Nice! Du hast dein eigenen Web Server, nun kannst du deine eigene Website hosten.&nbsp;<br> Um zu schauen ob der Web Server läuft, können wir unsere IP-Adresse im Browser eingeben.<br> Brauche diesen Command, um deine IP-Adresse herauszufinden:<br>
           <br>
           <span class="u-text-palette-2-dark-1">hostname -I</span>
           <br>
-          <br>It shows your IP Address e.g. 192.168.1.50<br>
-          <br>Now you see the default web page of apache:
+          <br>Es wird dir deine private IP ausgeben z.B. 192.168.1.50<br>
+          <br>Jetzt solltest du die default Website von Apache sehen:
         </p>
         <img class="u-image u-image-default u-image-2" src="images/Screenshot2022-05-26143945.png" alt="" data-image-width="1920" data-image-height="1035">
       </div>
     </section>
     <section class="u-clearfix u-custom-color-1 u-section-2" id="sec-056a">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h3 class="u-align-center u-text u-text-default u-text-1">Step 3: How to edit the web page</h3>
-        <p class="u-align-center u-text u-text-default u-text-2">To make changes to the default web page you can use this cammand:<br>
+        <h3 class="u-align-center u-text u-text-default u-text-1">Schritt 3: Wie die Website editieren</h3>
+        <p class="u-align-center u-text u-text-default u-text-2">Um Änderungen vorzunehmen können wir diesen Command benutzen:<br>
           <br>
           <span class="u-text-palette-2-dark-1">nano /var/www/html/index.html</span>
           <br>
-          <br>The command open the nano text editor to edit the index.html file in the directory /var/www/html/<br>
+          <br>Der Befehl öffnet mit dem Nano Texteditor das index.html Filel in dem Ordner/Directory /var/www/html/<br>
           <br>
           <br>
-          <br>That's it for this short tutorial.<br>You now have an apache web server on your raspberry pi and you can host your own Website.<br>If you had any problems then please wirte a comment below and I will help you.<br>See you soon.&nbsp;
+          <br>Das war auch schon die ganze Hexerei<br>Du hostest deine eingene Website auf deinem Raspberry Pi.<br> Wenn du Probleme hast, dann kontaktiere mich und ich werde dir helfen.<br> Bis bald!&nbsp;
         </p>
       </div>
     </section>
