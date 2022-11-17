@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Raspberry Pi Linux UFW Firewall Ubuntu">
+    <meta name="description" content="">
+    <meta name="robots" content="noindex">
+    <title>Alle Linux-Projekte und -Tutorials</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Linux-tutorials-projects.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" "="" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" "="" defer=""></script>
+    <meta name="generator" content="Nicepage 4.16.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+    
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "dulukch"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Alle Linux-Projekte und -Tutorials">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-custom-color-1 u-overlap u-overlap-contrast u-xl-mode" data-lang="en"><header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-202b"><div class="u-clearfix u-sheet u-sheet-1">
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Home.html" style="padding: 10px 20px;">Home</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">Home</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header> 
+    <section class="u-clearfix u-custom-color-1 u-section-1" id="sec-17f1">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-align-center u-text u-text-default u-text-1"> Alle Linux-Projekte und -Tutorials</h1>
+        <h6 class="u-align-center u-text u-text-default u-text-2">
+          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" href="Linux-tutorials-projects.html#sec-afcb" data-page-id="911014097"> UFW konfigurieren (Ubuntu) Firewall</a>
+        </h6>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-section-2" id="sec-afcb">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-text u-text-default u-text-1">UFW konfigurieren (Ubuntu) Firewall</h1>
+        <p class="u-align-center u-large-text u-text u-text-default u-text-variant u-text-2"></p>
+        <h3 class="u-align-center u-text u-text-default u-text-3">Schritt 1 — Verwenden von IPv6 mit UFW (optional)</h3>
+        <p class="u-large-text u-text u-text-variant u-text-4"> Wenn auf Ihrem Ubuntu-Server IPv6 aktiviert ist, muss UFW so konfiguriert sein, dass IPv6 unterstützt wird, um Firewall-Regeln nicht nur für IPv4, sondern auch für IPv6 zu verwalten. Öffnen Sie dazu die UFW-Konfiguration mit&nbsp;nano oder Ihrem bevorzugten Editor.</p>
+        <div class="u-container-style u-grey-75 u-group u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-5"> sudo nano /etc/default/ufw</h5>
+          </div>
+        </div>
+        <p class="u-large-text u-text u-text-default u-text-variant u-text-6"> Stellen Sie dann sicher, dass der Wert von&nbsp;IPV6=yeslautet.</p>
+        <h3 class="u-custom-font u-font-lato u-text u-text-default u-text-7"> Schritt 2 — Einrichten von Standardrichtlinien</h3>
+        <p class="u-large-text u-text u-text-default u-text-variant u-text-8"> Auf Standardeinstellungen setzten:</p>
+        <div class="u-container-style u-grey-75 u-group u-group-2">
+          <div class="u-container-layout u-valign-middle u-container-layout-2">
+            <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-9"> sudo ufw default deny incoming<br>&nbsp;<br>sudo ufw default allow outgoing
+            </h5>
+          </div>
+        </div>
+        <h3 class="u-custom-font u-font-lato u-text u-text-default u-text-10"> Schritt 3 — Zulassen von SSH-Verbindungen</h3>
+        <p class="u-large-text u-text u-text-default u-text-variant u-text-11"> Unbedingt vor Aktivierung einstellen, ansonsten ist kein SSH Zugriff möglich:</p>
+        <div class="u-container-style u-grey-75 u-group u-group-3">
+          <div class="u-container-layout u-container-layout-3">
+            <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-12">sudo ufw allow ssh</h5>
+          </div>
+        </div>
+        <p class="u-large-text u-text u-text-default u-text-variant u-text-13"> ufw wiess, was allow ssh bedeutet (Prot 22) ansonsten geht auch der command:</p>
+        <div class="u-container-style u-grey-75 u-group u-group-4">
+          <div class="u-container-layout u-container-layout-4">
+            <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-14">sudo ufw allow 22</h5>
+          </div>
+        </div>
+        <p class="u-large-text u-text u-text-default u-text-variant u-text-15"> oder welcher Port auch immer, je nachdem welchen SIe für SSH konfiguriert haben.</p>
+        <h3 class="u-custom-font u-font-lato u-text u-text-default u-text-16"> Schritt 4 — Aktivieren von UFW</h3>
+        <div class="u-container-style u-grey-75 u-group u-group-5">
+          <div class="u-container-layout u-container-layout-5">
+            <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-17">sudo ufw enable</h5>
+          </div>
+        </div>
+        <p class="u-large-text u-text u-text-default u-text-variant u-text-18"> Y und Enter, um weiter zu fahren</p>
+        <div class="u-container-style u-grey-75 u-group u-group-6">
+          <div class="u-container-layout u-valign-middle u-container-layout-6">
+            <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-19">
+              <span class="u-text-palette-3-base">#show status of ufw and the rules&nbsp;<br>
+              </span>
+              <br>sudo ufw status verbose
+            </h5>
+          </div>
+        </div>
+        <p class="u-large-text u-text u-text-variant u-text-20">starte danach das System neu, überprüfe mit dem obigen Befehl, dass Port 22 (SSH) allowed ist, wenn du in einer SSH Session bist.<br>
+          <br>22/tcp&nbsp; &nbsp; &nbsp; &nbsp; ALLOW IN&nbsp; &nbsp; &nbsp; &nbsp; Anywhere&nbsp;
+        </p>
+        <div class="u-container-style u-grey-75 u-group u-group-7">
+          <div class="u-container-layout u-valign-middle u-container-layout-7">
+            <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-21">
+              <span class="u-text-palette-3-base">#reboot system</span>
+              <br>&nbsp;<br>sudo reboot
+            </h5>
+          </div>
+        </div>
+        <h3 class="u-custom-font u-font-lato u-text u-text-default u-text-22"> Schritt 5 — Zulassen anderer Verbindungen</h3>
+        <p class="u-large-text u-text u-text-default u-text-variant u-text-23"> Beispiele:</p>
+        <div class="u-container-style u-grey-75 u-group u-group-8">
+          <div class="u-container-layout u-valign-middle u-container-layout-8">
+            <h5 class="u-align-left u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-24">
+              <span class="u-text-palette-3-base"></span>
+              <span class="u-text-palette-3-base">#Spezifische IP-Adressen</span>&nbsp;<br>sudo ufw allow from 203.0.113.4&nbsp;<br>sudo ufw allow from 203.0.113.4 to any port 22&nbsp;<br>
+              <br>
+              <span class="u-text-palette-3-base">#Subnetze&nbsp;</span>
+              <br>sudo ufw allow from 203.0.113.0/24&nbsp;<br>sudo ufw allow from 203.0.113.0/24 to any port 22<br>
+              <br>&nbsp;#sudo ufw allow from 203.0.113.0/24 to any port 22
+ip addr<br>
+              <br>
+              <span class="u-text-palette-1-dark-1">
+                <span class="u-text-palette-4-base">Output Excerpt</span>&nbsp;
+              </span>
+              <br>2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state<br>&nbsp;. . .&nbsp;<br>3: eth1: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN group default&nbsp;<br>
+              <br>
+              <span class="u-text-palette-3-base">#Wenn Server eine öffentliche Netzwerkschnittstelle namens eth0 hat, könnten Sie HTTP-Verkehr (Port 80) dorthin zulassen</span>&nbsp;<br>sudo ufw allow in on eth0 to any port 80&nbsp;<br>sudo ufw allow in on eth1 to any port 3306&nbsp; &nbsp; &nbsp; <span class="u-text-palette-3-base">#MySQL-Datenbankserver</span>
+            </h5>
+          </div>
+        </div>
+        <h3 class="u-custom-font u-font-lato u-text u-text-default u-text-25"> Schritt 6 — Ablehnen von Verbindungen</h3>
+        <div class="u-container-style u-grey-75 u-group u-group-9">
+          <div class="u-container-layout u-container-layout-9">
+            <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-26">
+              <span class="u-text-palette-3-base"></span>
+              <span class="u-text-palette-3-base">#z.B. HTTP-Verbindungen ablehnen&nbsp;</span>
+              <br>sudo ufw deny http&nbsp;<br>
+              <br>
+              <span class="u-text-palette-3-base">#alle Verbindungen von &lt;ip&gt; ablehnen</span>&nbsp;<br>sudo ufw deny from 203.0.113.4
+            </h5>
+          </div>
+        </div>
+        <h3 class="u-custom-font u-font-lato u-text u-text-default u-text-27"> Schritt 7 — Löschen von Regeln</h3>
+        <p class="u-large-text u-text u-text-default u-text-variant u-text-28"> Wenn Regelnummern verwendet wurden:</p>
+        <div class="u-container-style u-grey-75 u-group u-group-10">
+          <div class="u-container-layout u-container-layout-10">
+            <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-29">
+              <span class="u-text-palette-3-base"></span>
+              <span class="u-text-palette-3-base">#Liste von Firewall Regeln mit Nummer</span>
+              <br>sudo ufw status numbered <br>
+              <br>
+              <span class="u-text-palette-3-base">#delete nach nummer z.B. Regel 2 </span>
+              <br>sudo ufw delete 2
+            </h5>
+          </div>
+        </div>
+        <p class="u-large-text u-text u-text-default u-text-variant u-text-30">Nach tatsächlicher Regel:</p>
+        <div class="u-container-style u-grey-75 u-group u-group-11">
+          <div class="u-container-layout u-container-layout-11">
+            <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-31">
+              <span class="u-text-palette-3-base"></span>
+              <span class="u-text-palette-3-base">#Regel namens "allow http"&nbsp;</span>
+              <br>sudo ufw delete allow http<br>&nbsp;<br>
+              <span class="u-text-palette-3-base">#oder anstelle von http &lt;allow 80&gt;</span>&nbsp;<br>sudo ufw delete allow 80
+            </h5>
+          </div>
+        </div>
+        <h3 class="u-custom-font u-font-lato u-text u-text-32">Schritt 8 — Prüfen von UFW-Status und -Regeln</h3>
+        <div class="u-container-style u-grey-75 u-group u-group-12">
+          <div class="u-container-layout u-container-layout-12">
+            <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-33">
+              <span class="u-text-palette-3-base"></span>
+              <span class="u-text-palette-3-base"></span>sudo ufw status verbose
+            </h5>
+          </div>
+        </div>
+        <h3 class="u-custom-font u-font-lato u-text u-text-34"> Schritt 9 — Aktivieren oder Zurücksetzen von UFW</h3>
+        <div class="u-container-style u-grey-75 u-group u-group-13">
+          <div class="u-container-layout u-container-layout-13">
+            <h5 class="u-align-center u-custom-font u-font-lato u-text u-text-default u-text-palette-2-base u-text-35">
+              <span class="u-text-palette-3-base"></span>
+              <span class="u-text-palette-3-base">#disable ufw alle konfigurierten Einstellungen sind nicht länger aktivieret</span>&nbsp;<br>sudo ufw disable&nbsp;<br>
+              <br>
+              <span class="u-text-palette-3-base">#reset alle regeln und man kann von neu starten&nbsp;</span>
+              <br>sudo ufw reset
+            </h5>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-custom-color-1 u-section-3" id="sec-0a17">
+      <div class="u-align-left u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-align-center u-text u-text-default u-text-1">Projekte in Arbeit</h1>
+      </div>
+    </section>
+    <style class="u-overlap-style">.u-overlap:not(.u-sticky-scroll) .u-header {
+background-color: #391267 !important
+}</style>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-cedd"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">
+          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" href="Impressum.html" data-page-id="940817149">Impressum</a>
+        </p>
+        <p class="u-small-text u-text u-text-variant u-text-2">
+          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2" href="Datenschutz.html" data-page-id="815508188">Datenschutz</a>
+        </p>
+      </div></footer>
+    
+</body></html>
