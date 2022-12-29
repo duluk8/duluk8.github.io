@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="linux cheat sheet, useful linux commands, ssh, ls, mkdir, rm, rmdir, nano, vim, shred, pwd, cd, touch, echo, cp, Linux, commands, Linux terminal, Linux syntax" />
+        <meta name="author" content="" />
+        <title>Linux all commands you need to know</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/duluk.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html">Duluk</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                    <li><a class="dropdown-item" href="blog-home.html">All Projects</a></li>
+                                    <li><a class="dropdown-item" href="allWindows.html">Windows</a></li>
+                                    <li><a class="dropdown-item" href="allLinux.html">Linux</a></li>
+                                    <li><a class="dropdown-item" href="allRaspberryPi.html">Raspberry Pi</a></li>
+                                    <li><a class="dropdown-item" href="allPython.html">Python</a></li>
+                                    <li><a class="dropdown-item" href="allDocker.html">Docker</a></li>
+                                    <li><a class="dropdown-item" href="allPowerShell.html">PowerShell</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="pricing.html">Courses</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                            <!--
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                                    <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
+                                    <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
+                                </ul>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Page Content-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <!--<div class="col-lg-3">
+                            <div class="d-flex align-items-center mt-lg-5 mb-4">
+                                <img class="img-fluid rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
+                                <div class="ms-3">
+                                    <div class="fw-bold">Valerie Luna</div>
+                                    <div class="text-muted">News, Business</div>
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="col-lg-9">
+                            <!-- Post content-->
+                            <article>
+                                <!-- Post header-->
+                                <header class="mb-4">
+                                    <!-- Post title-->
+                                    <h1 class="fw-bolder mb-1">Linux: Commands you need to know</h1>
+                                    <!-- Post meta content-->
+                                    <div class="text-muted fst-italic mb-2">December 29, 2022</div>
+                                    <!-- Post categories-->
+                                    <a class="badge bg-secondary text-decoration-none link-light" href="allLinux.html">Linux</a>
+                                </header>
+                                <!-- Preview image figure
+                                <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
+                                -->
+                                <!-- Post content-->
+                                <section class="mb-5">
+                                    <h2 class="fw-bolder mb-4 mt-5">All Commands</h2>
+                                    <table>
+                                        <tr>
+                                          <th>Command</th>
+                                          <th>Discription</th>
+                                        </tr>
+                                        <tr>
+                                          <th>ssh</th>
+                                          <td>Used anywhere to connect to other machines by specifying the username@ipaddres of the server you want to connect to. <br>Example: <code>ssh username@10.10.1.20</code> accept all fingerprints and type the password</td>
+                                        </tr>
+                                        <tr>
+                                            <th>ls</th>
+                                            <td>Lists all files in your current directory. <br>Specific options: <code>ls -l</code> for a nice list and <code>ls -al</code> for including all the hidden files.</td>
+                                        </tr>
+                                        <tr>
+                                            <th>pwd</th>
+                                            <td>To find out where you are located. Output: Your current directory <br>Example /home/username</td>
+                                        </tr>
+                                        <tr>
+                                            <th>cd</th>
+                                            <td>Cange direcotry. Directly after "cd" you can specify where you want to go. <br>Example: Root of the file system <code>cd /</code> or a specific path <code>cd /usr/bin</code>, with <code>cd ..</code> you can jump back one directory, <code>cd </code> with space will take you back to the home directory</td>
+                                        </tr>
+                                        <tr>
+                                            <th>touch</th>
+                                            <td>Is one of the quickest and easiest way to create a file. <br>Example: <code>touch file.txt</code> or multiple files <code>touch this is a nice command</code>(this, is, a, nice, command are created) or <code>touch file{1..10}</code>(file, file1, file2 etc.)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>echo</th>
+                                            <td>Allows you to output something in the terminal <code>echo Hello World!</code> or you can use it to add stuff to your file really quickly <code>echo "Stuff to add" > neworexistingfile.txt</code></td>
+                                        </tr>
+                                        <tr>
+                                            <th>nano</th>
+                                            <td>To edit new or existing files. <br>Example: <code>nano filename.nice</code> now you can edit the file. To save ctrl+x Y and enter</td>
+                                        </tr>
+                                        <tr>
+                                            <th>vim</th>
+                                            <td>To edit new or existing files. <br>Example: <code>vim file.name</code> hit I to start inserting text and ESC Colon(:) and wq to write and quit.</td>
+                                        </tr>
+                                        <tr>
+                                            <th>cat</th>
+                                            <td>To see waht is in a file really really quick. <br>Cat and then file name: <code>cat file.name</code></td>
+                                        </tr>
+                                        <tr>
+                                            <th>shred</th>
+                                            <td>To shred a file so nobody can ever see what's in that file. <br><code>shred file.name</code></td>
+                                        </tr>
+                                        <tr>
+                                            <th>mkdir</th>
+                                            <td>Create new directory, simply mkdir and file name <br><code>mkdir newdirectory</code></td>
+                                        </tr>
+                                        <tr>
+                                            <th>cp</th>
+                                            <td>To copy a file by cp file to copy and then where you want to go it <br><code>cp file.name directory</code></td>
+                                        </tr>
+                                        <tr>
+                                            <th>mv</th>
+                                            <td>For moving files. By mv, specify the and then where you wanna put it. <br><code>mv file.name directory</code></td>
+                                        </tr>
+                                        <tr>
+                                            <th>rm</th>
+                                            <td>To remove or delete a file. <br><code>rm file.name</code></td>
+                                        </tr>
+                                        <tr>
+                                            <th>rmdir</th>
+                                            <td>To remove a direcotry <code>rmdir directory</code>. If it's not empty, go back to the rm command an do a -r for recursive <code>rm -r directory</code></td>
+                                        </tr>
+                                    </table>
+                                    <p class="fs-5 mb-4"><br>I hope it is useful as a little cheat sheet for you.</p>
+                                </section>
+                            </article>
+                            <!-- Comments section-->
+                            <!--<section>
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <!- Comment form->
+                                        <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
+                                        <!-- Comment with nested comments->
+                                        <div class="d-flex mb-4">
+                                            <!-- Parent comment->
+                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                            <div class="ms-3">
+                                                <div class="fw-bold">Commenter Name</div>
+                                                If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
+                                                <!-- Child comment 1->
+                                                <div class="d-flex mt-4">
+                                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                                    <div class="ms-3">
+                                                        <div class="fw-bold">Commenter Name</div>
+                                                        And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
+                                                    </div>
+                                                </div>
+                                                <!-- Child comment 2->
+                                                <div class="d-flex mt-4">
+                                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                                    <div class="ms-3">
+                                                        <div class="fw-bold">Commenter Name</div>
+                                                        When you put money directly to a problem, it makes a good headline.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Single comment->
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                            <div class="ms-3">
+                                                <div class="fw-bold">Commenter Name</div>
+                                                When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>-->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright 2022 &copy; Duluk. All rights Reserved.</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="privacy.html">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                        <!--<span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a> -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
