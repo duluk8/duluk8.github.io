@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="powershell create file, powershell get-help, powershell change directory, PowerShell basic commands, basic cmdlets, powershell manage process, powershell list proceses, powershell manage services, powershell copy file, powershell move folder, powershell execution policiy, Set-ExecutionPolicy, learn PowerShell, PowerShell Cheat Sheet, duluk PowerShell" />
+        <meta name="author" content="" />
+        <title>What are the basic PowerShell commands? Which PowerShell commands should I know?</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/duluk.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1826192715996901"
+            crossorigin="anonymous">
+        </script>
+        <link rel="alternate" href="https://duluk.ch" hreflang="en-us" />
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html">IT-Duluk</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                    <li><a class="dropdown-item" href="blog-home.html">All Projects</a></li>
+                                    <li><a class="dropdown-item" href="allWindows.html">Windows</a></li>
+                                    <li><a class="dropdown-item" href="allLinux.html">Linux</a></li>
+                                    <li><a class="dropdown-item" href="allRaspberryPi.html">Raspberry Pi</a></li>
+                                    <li><a class="dropdown-item" href="allPython.html">Python</a></li>
+                                    <li><a class="dropdown-item" href="allDocker.html">Docker</a></li>
+                                    <li><a class="dropdown-item" href="allPowerShell.html">PowerShell</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="pricing.html">Courses</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                            <!--
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                                    <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
+                                    <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
+                                </ul>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Page Content-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <!--<div class="col-lg-3">
+                            <div class="d-flex align-items-center mt-lg-5 mb-4">
+                                <img class="img-fluid rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
+                                <div class="ms-3">
+                                    <div class="fw-bold">Valerie Luna</div>
+                                    <div class="text-muted">News, Business</div>
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="col-lg-9">
+                            <!-- Post content-->
+                            <article>
+                                <!-- Post header-->
+                                <header class="mb-4">
+                                    <!-- Post title-->
+                                    <h1 class="fw-bolder mb-1">What are the Basic PowerShell Commands you need to know?</h1>
+                                    <!-- Post meta content-->
+                                    <div class="text-muted fst-italic mb-2">January 2, 2023</div>
+                                    <!-- Post categories-->
+                                    <a class="badge bg-secondary text-decoration-none link-light" href="allPowerShell.html">PowerShell</a>
+                                </header>
+                                <!-- Preview image figure
+                                <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
+                                -->
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1826192715996901"
+                                        crossorigin="anonymous"></script>
+                                    <!-- VertikalDesktop01 -->
+                                    <ins class="adsbygoogle"
+                                        style="display:block"
+                                        data-ad-client="ca-pub-1826192715996901"
+                                        data-ad-slot="6392072436"
+                                        data-ad-format="auto"
+                                        data-full-width-responsive="true"></ins>
+                                    <script>
+                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script>
+                                <!-- Post content-->
+                                <section class="mb-5">
+                                    <h2 class="fw-bolder mb-4 mt-5">The PowerShell cmdlets you should know in 2023!</h2>
+                                    <table>
+                                        <tr>
+                                          <th>Command</th>
+                                          <th>Discription</th>
+                                        </tr>
+                                        <tr>
+                                          <th>Set-Location</th>
+                                          <td>Cange direcotry. Directly after "cd, sl, chdir" you can specify where you want to go.<br>Example: Back to the drive letter <code>cd /</code> or a specific path <code>cd C:\Program Files\Microsoft</code> with <code>cd ..</code> you can jump back one directory.</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Get-Help</th>
+                                            <td>The Get-Help cmdlet displays information about PowerShell concepts and commands, including cmdlets, functions, Common Information Model (CIM) commands, workflows, providers, aliases, and scripts.<br> Example: <code>Get-Help Set-Location</code></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Get-Process</th>
+                                            <td>Shows a list of all active system proceses with their Id. It is an alternative to Windows Task Manager to view system processes<br> Example: <code>Get-Process</code> or for stopping <code>Get-Process -ID 832 | Stop-Process</code> ID = 832 is the cmd process</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Start-Process</th>
+                                            <td>To start one or multiple processes on your local computer. Example: Starte Microsoft Edge <code>Start-Process msedge</code> or <code>Start-Process -FilePath "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" -Verb runAs</code> -Verb runAs runs the process as an administrator.</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Clear-Host</th>
+                                            <td>With Clear-Host or simply cls you remove all text, including commands and thier output from the current PowerShell display. It affects only the current display.</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Get-Service</th>
+                                            <td>To get a list of all the services installed on the Windows operating systems, their status, and startup type. To specify use the parameters e.g. -Name "WinDefend"<br><code>Get-Service</code> or <code>Get-Service -Name IP*</code></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Get-ChildItem</th>
+                                            <td>Lists all files in your current directory. So you it's like the File Explorer. <code>Get-ChildItem -Path "C:\Program Files"</code> for a specific directory or only <code>Get-ChildItem</code> for the current working directory. Instead of Get-ChildItem you can also use <code>ls</code> as a shorter version.</td>
+                                        </tr>
+                                        <tr>
+                                            <th>New-Item</th>
+                                            <td>To create a file in PowerShell, you can use the New-Item cmdlet (ni). By changing the file extension, you can create any type of file, such as a text or word document.<br><code>ni test.txt</code> or <code>ni -Path "V:\Folder\file.txt"</code></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Copy-Item</th>
+                                            <td>To copy files, folders and thier content to another directory. After Copy-Item or cp enter the path to copy and with the parameter -Destination destination directory. <code>cp "C:\Program Files\PuTTy" -Destination 'V:\DestinationFolder' -Recurse</code> -Recurse makes sure to move all the folder contents, otherwise PowerShell will only copy the top-level folder in my example PuTTY.</td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Move-Item</th>
+                                            <td>For moving an item. To move folders, files, sub-folders and all content to another destination. <code>mv -Path "V:\Folder" -Destination "V:\DestinationFolder"</code> This command moves the folder "Folder" and all its contents to the DestinationFolder.</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Remove-Item</th>
+                                            <td>With the Remove-Item cmdlet (rm) you can delete files, folders, functions and ohter data types form a specific direcotry. <code>rm V:\DestinationFolder</code></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Get-Content</th>
+                                            <td>The Get-Content cmdlet shows you the content of an item without using a texteditor. <code>Get-Content "V:\Folder\file.txt</code></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Clear-Content</th>
+                                            <td>With the Clear-Content cmdlet you can delete the contents of a specififed file without deleting the file itself.<br><code>Clear-Content -Path "V:\Folder\file.txt"</code> now thê file.txt is empty but still exists.</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Set-ExecutionPolicy</th>
+                                            <td>PowerShell execution policies are a security mechanism to protect your system from running malicious scripts. Execution policies don’t prevent you from running PowerShell code in the console as a shell but script execution. To know you current execution policy type: <code>Get-ExecutionPolicy</code> for executing unsigned scripts type: <code>Get-ExecutionPolicy</code></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Get-History</th>
+                                            <td>You can use the Get-History cmdlet instead of using the up and down arrow keys to scroll through recent commands. <code>Get-History</code> or <code>h 4 | fl</code> this will show you detailed information about the command with Id 4.</td>
+                                        </tr>
+                                    </table>
+                                    <p class="fs-5 mb-4"><br>I hope it will help you as a little cheat sheet.<br> To learn PowerShell properly you just need to do some projects. Because here it's really learning by doing. If you feel like it, you can take a look at one of my projects: <a href="windows001.html">Manage ADDS with PowerShell</a></p>
+                                </section>
+                            </article>
+                            <!-- Comments section-->
+                            <!--<section>
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <!- Comment form->
+                                        <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
+                                        <!-- Comment with nested comments->
+                                        <div class="d-flex mb-4">
+                                            <!-- Parent comment->
+                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                            <div class="ms-3">
+                                                <div class="fw-bold">Commenter Name</div>
+                                                If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
+                                                <!-- Child comment 1->
+                                                <div class="d-flex mt-4">
+                                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                                    <div class="ms-3">
+                                                        <div class="fw-bold">Commenter Name</div>
+                                                        And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
+                                                    </div>
+                                                </div>
+                                                <!-- Child comment 2->
+                                                <div class="d-flex mt-4">
+                                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                                    <div class="ms-3">
+                                                        <div class="fw-bold">Commenter Name</div>
+                                                        When you put money directly to a problem, it makes a good headline.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Single comment->
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                            <div class="ms-3">
+                                                <div class="fw-bold">Commenter Name</div>
+                                                When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>-->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright 2022 &copy; Duluk. All rights Reserved.</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="privacy.html">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="impressum.html">Contact</a>
+                        <!--<span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a> -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
