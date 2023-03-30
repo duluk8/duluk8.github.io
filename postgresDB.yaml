@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: postgres
+  labels:
+    name: postgres
+spec:
+  ports:
+  - port: 5436
+    targetPort: 5436
+    protocol: TCP
+  selector:
+    name: postgres
