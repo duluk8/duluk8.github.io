@@ -90,18 +90,6 @@
                                     <p class="fs-5 mb-4">Set to default settings: <pre>sudo ufw default deny incoming <br>sudo ufw default allow outgoing</pre></p>
                                     <h2 class="fw-bolder mb-4 mt-5">How to allow SSH connections?</h2>
                                     <p class="fs-5 mb-4">Must be set before activation, otherwise SSH access is not possible:</p> <pre>sudo ufw allow ssh</pre> <p class="fs-5 mb-4">ufw knew what allow ssh means (Prot 22) otherwise the command also works:</p> <pre>sudo ufw allow 22</pre><p class="fs-5 mb-4">or whichever port you have configured for SSH.</p>
-                                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1826192715996901"
-                                        crossorigin="anonymous"></script>
-                                    <!-- VertikalDesktop01 -->
-                                    <ins class="adsbygoogle"
-                                        style="display:block"
-                                        data-ad-client="ca-pub-1826192715996901"
-                                        data-ad-slot="6392072436"
-                                        data-ad-format="auto"
-                                        data-full-width-responsive="true"></ins>
-                                    <script>
-                                        (adsbygoogle = window.adsbygoogle || []).push({});
-                                    </script>
                                     <h2 class="fw-bolder mb-4 mt-5">How to activate UFW?</h2>
                                     <p class="fs-5 mb-4"><pre>sudo ufw enable</pre> <p class="fs-5 mb-4">Y and Enter to continue</p><pre>#show status of ufw and the rules <br>sudo ufw status verbose</pre><p class="fs-5 mb-4">then reboot the system, check with the above command that port 22 (SSH) is allowed if you are in an SSH session. <br><code>22/tcp ALLOW IN Anywhere</code> <br></p><pre>#reboot system <br>sudo reboot</pre></p>
                                     <h2 class="fw-bolder mb-4 mt-5">How to allow other connections with UFW?</h2>
