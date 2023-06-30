@@ -1,7 +1,0 @@
-A short overview about what we will create in this tutorial.
-First we have a look at createing a Website with Flask in Python. This step we will work out locally.
-Secondly, we have the experience and can take a look at Docker. We will create our Docker Image.
-In the last step we create a Docker container and run it, know your Web APP is available on local host.
-
-Let's begin with our Web APP. 
-Create a folder to place your project files. In my example C:\duluk_tutorial\

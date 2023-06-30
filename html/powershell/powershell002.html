@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Windows Server, PowerShell, how to create domain, how to add ad user, active directory, how to add device to windows server ad, windows, how to install ADDS, use PowerShell to setup Windows Server, how to use PowerShell, how to use windows server" />
+        <meta name="description" content="PowerShell Script which checks for Windows Updates. Add a task in the Task Scheduler with PowerShell or with GUI." />
         <meta name="author" content="" />
-        <title>How to setup active directory with PowerShell?</title>
+        <title>How to automate Windows updates with PowerShell?</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/duluk.ico" />
+        <link rel="icon" type="image/x-icon" href="../../assets/duluk.ico" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -21,25 +21,25 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html">IT-Duluk</a>
+                    <a class="navbar-brand" href="../../index.html">IT-Duluk</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                    <li><a class="dropdown-item" href="blog-home.html">All Projects</a></li>
-                                    <li><a class="dropdown-item" href="allWindows.html">Windows</a></li>
-                                    <li><a class="dropdown-item" href="allLinux.html">Linux</a></li>
-                                    <li><a class="dropdown-item" href="allRaspberryPi.html">Raspberry Pi</a></li>
-                                    <li><a class="dropdown-item" href="allPython.html">Python</a></li>
-                                    <li><a class="dropdown-item" href="allDocker.html">Docker</a></li>
-                                    <li><a class="dropdown-item" href="allPowerShell.html">PowerShell</a></li>
+                                    <li><a class="dropdown-item" href="../../blog-home.html">All Projects</a></li>
+                                    <li><a class="dropdown-item" href="../windows/allWindows.html">Windows</a></li>
+                                    <li><a class="dropdown-item" href="../linux/allLinux.html">Linux</a></li>
+                                    <li><a class="dropdown-item" href="../raspberrypi/allRaspberryPi.html">Raspberry Pi</a></li>
+                                    <li><a class="dropdown-item" href="../python/allPython.html">Python</a></li>
+                                    <li><a class="dropdown-item" href="../docker/allDocker.html">Docker</a></li>
+                                    <li><a class="dropdown-item" href="../powershell/allPowerShell.html">PowerShell</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="pricing.html">Courses</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../../pricing.html">Courses</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../../about.html">About</a></li>
                             <!--
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                             <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
@@ -73,11 +73,10 @@
                                 <!-- Post header-->
                                 <header class="mb-4">
                                     <!-- Post title-->
-                                    <h1 class="fw-bolder mb-1">How to Create a Domain and add Devices with PowerShell on Windows Server?</h1>
+                                    <h1 class="fw-bolder mb-1">How to automate Windows updates with PowerShell?</h1>
                                     <!-- Post meta content-->
-                                    <div class="text-muted fst-italic mb-2">December 15, 2022</div>
+                                    <div class="text-muted fst-italic mb-2">February 04, 2023</div>
                                     <!-- Post categories-->
-                                    <a class="badge bg-secondary text-decoration-none link-light" href="allWindows.html">Windows</a>
                                     <a class="badge bg-secondary text-decoration-none link-light" href="allPowerShell.html">PowerShell</a>
                                 </header>
                                 <!-- Preview image figure
@@ -85,31 +84,15 @@
                                 -->
                                 <!-- Post content-->
                                 <section class="mb-5">
-                                    <h2 class="fw-bolder mb-4 mt-5">How to output ADDS services?</h2>
-                                    <p class="fs-5 mb-4">The <code>Get-WindowsFeature</code> cmdlet gets information about features that are both available for installation and already installed on a computer running Windows Server or an offline virtual hard disk (VHD) running Windows Server. <pre>Get-WindowsFeature -Name *ADDS*</pre></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to install ADDS?</h2>
-                                    <p class="fs-5 mb-4">The <code>Install-WindowsFeature</code> cmdlet installs the specified features on a computer that is running Windows Server or on an offline virtual hard disk (VHD) that has Windows Server installed. This cmdlet works similarly to installing roles and features in Server Manager, with one important exception: the cmdlet does not install management tools for the features by default. To install management tools such as snap-ins on a target server, you must add the <code>-IncludeManagementTools</code> parameter to your command. <pre>Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools</pre></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to create your own domain</h2>
-                                    <p class="fs-5 mb-4">The <code>Install-ADDSForest</code> cmdlet installs an Active Directory forest configuration. <code>-InstallDNS</code> specifies that this cmdlet installs and configures the DNS server service for the new forest. <code>NoRebootOnCompletion</code> specifies that the cmdlet does not reboot the computer after the command completes. If you omit this parameter, the computer restarts after the command completes, regardless of success or failure. You can also omit this cmdlet (in the next step, we restart the server). <pre>Install-ADDSForest -DomainName "YourDomain.com" -InstallDns:$ture -NoRebootOnCompletion:$true</pre></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">Restart server with PowerShell</h2>
-                                    <p class="fs-5 mb-4">With <code>Restart-Computer</code> the server is restarted. <pre>Restart-Computer</pre></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to add local or remote computer to domain?</h2>
-                                    <p class="fs-5 mb-4">The <code>Add-Computer</code> cmdlet adds the local or remote computer to a domain or workgroup, or moves it from one domain to another. It also creates a domain account if the computer is added to the domain without an account.</p>
-                                    <p class="fs-5 mb-4">Local: <pre>Add-Computer -DomainName YourDomain.com -Restart</pre></p>
-                                    <p class="fs-5 mb-4">Remote: <pre>Add-Computer -ComputerName SVName01 -DomainName YourDomain.com -Restart</pre></p>
+                                    <h2 class="fw-bolder mb-4 mt-5">PowerShell Script</h2>
+                                    <p class="fs-5 mb-4"><pre># Import hte required module<br>Import-Module -Name PSWindowsUpdate<br><br># Get the list of available updates<br>$updates = Get-WindowsUpdate<br><br># Install the updates<br>$updates | Install-WindowsUpdate</pre><p class="fs-5 mb-4">In this example, the <code>Import-Module</code> cmdlet is used to import the <code>PSWindowsUpdate</code> module, which provides cmdlets for managing Windows updates. The <code>Get-WindowsUpdate</code> cmdlet is used to retrieve a list of available updates, and the <code>Install-WindowsUpdate</code> cmdlet is used to install the updates. The <code>$updates</code> variable is used to store the list of available updates, and the pipeline operator (|) is used to pipe the list of updates to the <code>Install-WindowsUpdate</code> cmdlet.<br><br>You can also use the <code>Get-WUList</code> cmdlet to retrieve more detailed information about the available updates, and the <code>Get-WUInstall</code> cmdlet to install specific updates.</p>
+                                    <h2 class="fw-bolder mb-4 mt-5">Add a task in the Task Scheduler</h2>
+                                    <p class="fs-5 mb-4">First, search in the Windows search bar for the Task Scheduler and open it. Then right click on <code>Task Scheduler (Local)</code> and <code>Create Task</code>. <img src="../../assets/powershell/powershell001.png" class="responsive"><br><br> Fill out following sections: <br><img class="responsive" src="../../assets/powershell/powershell002.png"><br><br>Then set a Trigger. Go to <code>Triggers</code> and then <code>New...</code>: <img class="responsive" src="../../assets/powershell/powershell003.png"><br><br>Next, go to <code>Actions</code> and then <code>New...</code>. The only thing you have to do is to set the path of the script: <img class="responsive" src="../../assets/powershell/powershell003.png"><br><br>You can leave the <code>Conditions</code> and <code>Settings</code> section as they are. To create the task click <code>OK</code>.<br> Tipp: If you want to check if the script is executed with a PopUp. Add the following line to your Script: <pre>[System.Windows.MessageBox]::Show('Search for updates')</pre><p class="fs-5 mb-4">So my Script looks like this:<br> <img class="responsive" src="../../assets/powershell/powershell004.png"></p>
+                                    <h2 class="fw-bolder mb-4 mt-5">Add a task in the Task Scheduler with PowerShell</h2>
+                                    <p class="fs-5 mb-4"><pre>Coming soon...</pre></p>
+                                    <h2 class="fw-bolder mb-4 mt-5">Testing</h2>
+                                    <p class="fs-5 mb-4">To test your task, you have to restart or shut down your computer because you set as trigger "on logon". After logging in you can open the Task Scheduler again and under Task Status you should see your task. Also the PopUp should appear with the Text "Search for updates".<br> Congratulations, you have created an automatic Windows Update Checker with Powershell and registered a task in the Task Scheduler!</p>
                                 </section>
-                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1826192715996901"
-                                    crossorigin="anonymous"></script>
-                                <!-- VertikalDesktop01 -->
-                                <ins class="adsbygoogle"
-                                    style="display:block"
-                                    data-ad-client="ca-pub-1826192715996901"
-                                    data-ad-slot="6392072436"
-                                    data-ad-format="auto"
-                                    data-full-width-responsive="true"></ins>
-                                <script>
-                                    (adsbygoogle = window.adsbygoogle || []).push({});
-                                </script>
                             </article>
                             <!-- Comments section-->
                             <!--<section>
@@ -164,9 +147,9 @@
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0 text-white">Copyright 2022 &copy; Duluk. All rights Reserved.</div></div>
                     <div class="col-auto">
-                        <a class="link-light small" href="privacy.html">Privacy</a>
+                        <a class="link-light small" href="../../privacy.html">Privacy</a>
                         <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="impressum.html">Contact</a>
+                        <a class="link-light small" href="../../impressum.html">Contact</a>
                         <!--<span class="text-white mx-1">&middot;</span>
                         <a class="link-light small" href="#!">Contact</a> -->
                     </div>
