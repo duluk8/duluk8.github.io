@@ -11326,7 +11326,8 @@ tr:nth-child(even) {
 }
 
 .responsive {
-  max-width: 100%;
+  width: 100%;
+  max-width: 900px;
   height: auto;
 }
 

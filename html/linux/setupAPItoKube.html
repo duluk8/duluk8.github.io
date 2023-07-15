@@ -1,100 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Python Rest API, Docker, Simple docker project" />
-        <meta name="author" content="" />
-        <title>The best API from local to Kubernetes tutorial</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/duluk.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../../css/styles.css" rel="stylesheet" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1826192715996901"
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="linux ufw commands, linux ufw allow port, linux ufw deny port, luinx ufw remove role, how to set up linux ufw on ubuntu?, linux ufw create role, linux ufw show roles, linux ufw firewall" />
+    <meta name="author" content="" />
+    <title>How to configure linux ufw? How to setup linux ufw?</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="../../assets/duluk.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../../css/styles.css" rel="stylesheet" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1826192715996901"
         crossorigin="anonymous"></script>
-        <link rel="alternate" href="https://duluk.ch" hreflang="en-us" />
-    </head>
-    <body class="d-flex flex-column">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="index.html">IT-Duluk</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                    <li><a class="dropdown-item" href="blog-home.html">All Projects</a></li>
-                                    <li><a class="dropdown-item" href="allWindows.html">Windows</a></li>
-                                    <li><a class="dropdown-item" href="allLinux.html">Linux</a></li>
-                                    <li><a class="dropdown-item" href="allRaspberryPi.html">Raspberry Pi</a></li>
-                                    <li><a class="dropdown-item" href="allPython.html">Python</a></li>
-                                    <li><a class="dropdown-item" href="allDocker.html">Docker</a></li>
-                                    <li><a class="dropdown-item" href="allPowerShell.html">PowerShell</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="pricing.html">Courses</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- Page Content-->
-            <section class="py-5">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5">
-                        <div class="col-lg-9">
-                            <!-- Post content-->
-                            <article>
-                                <!-- Post header-->
-                                <header class="mb-4">
-                                    <!-- Post title-->
-                                    <h1 class="fw-bolder mb-1">Local API to Kubernetes with Python</h1>
-                                    <!-- Post meta content-->
-                                    <div class="text-muted fst-italic mb-2">June 30, 2023</div>
-                                    <!-- Post categories-->
-                                    <a class="badge bg-secondary text-decoration-none link-light" href="../python/">Python</a>
-                                    <a class="badge bg-secondary text-decoration-none link-light" href="allDocker.html">Docker</a>
-                                    <a class="badge bg-secondary text-decoration-none link-light" href="allDocker.html">Linux</a>
-                                </header>
-                                <section class="mb-5">
-                                    <h2 class="fw-bolder mb-4 mt-5">What's the tutorial about?</h2>
-                                    <p class="fs-5 mb-4">Disclaimer. This tutorial is not done with one blog post. I will link the follwoing post here, so you can follow along and learn the World of Python, Docker and Kubernetes.</p>
-                                    <p class="fs-5 mb-4">Now you can see the virtual environment on the left side of your directory. Go to ".venv" and then to the "scripts" folder. This will allow you to see the activate file. In the terminal, type:<pre>cd .venv<br>cd scripts<br>.\activate</pre><p class="fs-5 mb-4">.\activate activates your environment so that you can run any Python code. Select "run once" and your environment is started.<br>Now add these two simple commands to your virtual environment:</p><pre>pip install Flask<br>pip freeze > requirements.txt</pre><p class="fs-5 mb-4">Next, create a <code>app.py</code> script in VS Code. To do that simply navigate to the directory tree and under “Scripts” right click “New File”.<br><img src="assets/docker/docker001.png" class="responsive"><br><br>Now let’s add the code below:</p><pre>from flask import Flask<br>app = Flask(__name__)<br><br>@app.route('/')<br>def hello_world():<br>    return 'Hello, Docker!'</pre><p class="fs-5 mb-4">Before you can run it, please exit venv and start it again to make sure that the Python script is recognized. After that, you can test it with the following command:<pre>deactivate<br>.\activate<br>python -m flask run</pre><p class="fs-5 mb-4">Now your website is accessible at localhost port 5000. In your favorite browser, type 172.0.0.1:5000 and you should see the following text: Hello Docker!.<br><img src="assets/docker/docker002.png" class="responsive"><br>As you can see, your web requests generate server logs. Now press CTRL+C and type deactivate so you are ready for the next part with Docker.</p></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to create a Dockerfile?</h2>
-                                    <p class="fs-5 mb-4">First, create a Docker file in the same folder as the app.py (Scripts).<br> <img src="assets/docker/docker003.png" class="responsive"><br><br>Next, we need to add a line that tells Docker which base image you want to use. You can take your own image, but in this tutorial we will use an official Python image that includes all the tools and packages.<pre># syntax=docker/dockerfile:1<br>FROM python:3.8-slim-buster</pre><p class="fs-5 mb-4">Let's create a working directory to make it easier for us. The working directory is the path for the default location. Now we can use relative paths based on the working directory.</p><pre>WORKDIR /app</pre><p class="fs-5 mb-4">With the <code>COPY</code> command we get the requirements like <code>pip</code> in our image. For example, we can run <code>pip install</code> in the next step. Syntax: First which file to copy and second where to copy the field.</p><pre>COPY requirements.txt requirements.txt</pre><p class="fs-5 mb-4">Use <code>RUN</code> to simply run <code>pip3 install</code>. This works exactly as if we were to run pip3 install locally on our machine, but this time the modules are installed into the image.</p><pre>RUN pip3 install -r requirements.txt</pre><p class="fs-5 mb-4">So we have installed our dependencies and our image is based on Python 3.8<br>The next step is to add our files (app.py and Dockerfile) to the Docker image. <code>COPY</code> will help with this:</p><pre>COPY app.py .<br>COPY Dockerfile .</pre><p class="fs-5 mb-4">Lastly, we need to add a line that says docker should run our Python script. We use the <code>CMD</code> command and need to make our application visible to the outside world by specifying <code>--host=0.0.0.0</code></p><pre>CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]</pre></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to build an image?</h2>
-                                    <p class="fs-5 mb-4">Use the <code>Docker build</code> command to build our Docker image. The build command optionally requires a <code>--tag</code> flag. The tag is used to specify the name of the image and an optional tag in the format <code>name:tag</code>. For simplicity, we'll omit the optional tag for now. If you do not pass a tag, Docker uses "latest" as the default tag.<pre>docker build --tag python-docker .</pre><p>To view your local docker images use <code>docker images</code>:<pre>docker images</pre></p><p>The Output should look like this:<br><img src="assets/docker/docker004.png" class="responsive"></p></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to run Docker Container?</h2>
-                                    <p class="fs-5 mb-4">To run an image inside a container, we use the <code>docker run</code> command. We need to add <code>--publish</code> to publish a port for our container, since our container runs in isolation, which includes networking. The format is: <code>host port:container port</code><pre>docker run --publish 8000:5000 python-docker</pre><p class="fs-5 mb-4">After running this command, you’ll notice that you were not returned to the command prompt. This is because our application is a REST server and runs in a loop waiting for incoming requests without returning control back to the OS until we stop the container.<br>Result:<br><img src="assets/docker/docker005.png" class="responsive"><br><img src="assets/docker/docker006.png" class="responsive"><br><p class="fs-5 mb-4">Instead of “Hello, Docker!” python script, you can add any code you want. For example:<pre>from flask import Flask<br>from flask_restful import Api, Resource<br><br>app =   Flask(__name__)<br><br>api =   Api(app)<br><br>class HelloWorld(Resource):<br>      def get(self):<br>          data={"data":"Hello World"}<br>          return data<br><br>api.add_resource(HelloWorld,'/hello')<br><br>if __name__=='__main__':<br>    app.run(debug=True)</pre><p class="fs-5 mb-4">Output:<br><img src="assets/docker/docker007.png" class="responsive"></p>
-                                </section>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <!-- Footer-->
-        <footer class="bg-dark py-4 mt-auto">
+    <link rel="alternate" href="https://duluk.ch" hreflang="en-us" />
+</head>
+
+<body class="d-flex flex-column">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Copyright 2022 &copy; Duluk. All rights Reserved.</div></div>
-                    <div class="col-auto">
-                        <a class="link-light small" href="privacy.html">Privacy</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="impressum.html">Contact</a>
+                <a class="navbar-brand" href="../../index.html">IT-Duluk</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                <li><a class="dropdown-item" href="../../blog-home.html">All Projects</a></li>
+                                <li><a class="dropdown-item" href="../windows/allWindows.html">Windows</a></li>
+                                <li><a class="dropdown-item" href="../linux/allLinux.html">Linux</a></li>
+                                <li><a class="dropdown-item" href="../raspberrypi/allRaspberryPi.html">Raspberry Pi</a></li>
+                                <li><a class="dropdown-item" href="../python/allPython.html">Python</a></li>
+                                <li><a class="dropdown-item" href="../docker/allDocker.html">Docker</a></li>
+                                <li><a class="dropdown-item" href="../powershell/allPowerShell.html">PowerShell</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../../pricing.html">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../about.html">About</a></li>
+                        <!--
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                                    <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
+                                    <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
+                                </ul>
+                            </li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <section class="py-5">
+            <div class="container px-5 my-5">
+                <div class="row gx-5">
+                    <!--<div class="col-lg-3">
+                            <div class="d-flex align-items-center mt-lg-5 mb-4">
+                                <img class="img-fluid rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
+                                <div class="ms-3">
+                                    <div class="fw-bold">Valerie Luna</div>
+                                    <div class="text-muted">News, Business</div>
+                                </div>
+                            </div>
+                        </div>-->
+                    <div class="col-lg-9">
+                        <!-- Post content-->
+                        <article>
+                            <!-- Post header-->
+                            <header class="mb-4">
+                                <!-- Post title-->
+                                <h1 class="fw-bolder mb-1">Note Web App | Local python (Flask) API to Kubernetes | EP 01 Setup</h1>
+                                <!-- Post meta content-->
+                                <div class="text-muted fst-italic mb-2">July 15, 2023</div>
+                                <!-- Post categories-->
+                                <a class="badge bg-secondary text-decoration-none link-light" href="allLinux.html">Linux</a>
+                                <a class="badge bg-secondary text-decoration-none link-light">Note App to Kubernetes</a>
+                            </header>
+                            <!-- Preview image figure
+                                <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
+                                -->
+                            <!-- Post content-->
+                            <section class="mb-5">
+                                <h2 class="fw-bolder mb-2 mt-5">Disclaimer</h2>
+                                <p class="fs-5 mb-2">This is gone be big. I hope you are ready for a Noteservice with an API hosted in Kubernetes. First
+                                    I show you the requirements (Enviornment and Software). After that I will explain you how to create a Python Flask
+                                    API for our Noteservice. Then we create a Docker-Image for the whole Application and finally we will put the whole
+                                    Noteservice to Kubernetes. At each installation of a programm or software I have a link with a good knowladge articals. It will not be possible to do the whole project in one post, so here are the other
+                                    tutorials you need to follow.</p>
+                                    <nav>
+                                        <ul>
+                                            <li><a href="setupAPItoKube.html" target="_parent">Setup</a></li>
+                                            <li><a href="#section2" target="_parent">Python: Flask API</a></li>
+                                            <li><a href="#section2" target="_parent">Python: SQLite Database</a></li>
+                                            <li><a href="#section2" target="_parent">Docker: Dockerize the Web App</a></li>
+                                            <li><a href="#section2" target="_parent">Kubernetes: Deploying the Web App</a></li>
+                                        </ul>
+                                    </nav>
+                                <h2 class="fw-bolder mb-2 mt-5">Enviornment</h2>
+                                <p class="fs-5 mb-2">For the whole project I will use a Linux-VM and I recommend you to use also a Linux. At least with a VM (Virtual Machine). <a href="itduluk.youtube.com/setupLinuxVM">Setup Linux VM</a> <br>
+                                    As code editor we will use Visual Studio Code, we will program with python, for creating our image and container we will use docker and finally
+                                    we use kubernetes to host our Note-Service.
+                                </p>
+                                <h2 class="fw-bolder mb-2 mt-5">Installing Visual Studio Code</h2>
+                                <a href="#PageToVSCode">More about VS Code</a>
+                                <p class="fs-5 mb-2">How to install VS Code? It's simple. To install it we simply run two commands. Firstly you should make sure, that your system is up to date. Click on the "Show Applications" and then look for a App named Terminal. <br>
+                                    <img src="../../assets/linux/showApplicationsUbuntu.png" class="responsive mb-3"> <br> Add it to your favorites by right click and then add. <img src="../../assets/linux/addTerminalToFav.png" class="responsive mb-3"> <br> Now open the Terminal and type in following command:</p>
+                                <code>sudo apt-get update</code>
+                                <p class="fs-5 mb-2">In this tutorial we will use snap to install VS Code. Snap packages are containerized applications. </p>
+                                <code>sudo snap install --classic code</code>
+                                <p class="fs-5 mb-2">Verifiy the installation by follwoing command (It should display a version like <b>1.80.1 or newer</b>):</p>
+                                <code>code --version</code>
+                                <p class="fs-5 mb-3">To open VS code use <code>code .</code> <br> If you want you can add it to your favorites by right clicking at the icon at the left and select "add to favorite"<br>
+                                    <img src="../../assets/linux/addVSCodeToFav.png" class="responsive mb-3"></p>
+                                
+                                <h2 class="fw-bolder mb-2 mt-5">How to install Python?</h2>
+                                <a href="#PageToPython">More about Python</a>
+                                <p class="fs-5 mb-2">To install python open your termianl once again, and type in following command to check if python is already installed. I would recommend to install python3</p>
+                                <code>python3 --version</code>
+                                <p class="fs-5 mb-2">Make sure you have the 3.10.6 version or newer. To install python3 use following command:</p>
+                                <code>sudo apt-get install python3</code>
+                                <p class="fs-5 mb-2">If you want you can check the version again you can do it by typing <code>python3 --version</code>. So congrats you have now successfully installed python. Let's move on with the next one.</p>
+
+                                <h2 class="fw-bolder mb-2 mt-5">How to install Docker on a Linux machine?</h2>
+                                <a href="#PageToDocker">More about Docker</a>
+                                <p class="fs-5 mb-2">First, let's open the termianl which should be displayed at the left or it is already open from the last steps. Then we use this command to install Docker <b>(by the question: Y and enter to continue)</b>:</p>
+                                <code>sudo apt install docker.io</code>
+                                <p class="fs-5 mb-2">To check if the installation of Docker was successfull type <code>docker</code> in the terminal. Now you should see many options for using the docker command. <br> <img src="../../assets/linux/dockerCMD.png" class="responsive mb-3"></p>
+
+                                <h2 class="fw-bolder mb-2 mt-5">How to install Kubernetes?</h2>
+                                <a href="#PageToKubernetes">More about Kubernetes</a>
+                                <p class="fs-5 mb-2">To install Kubernetes we use the kubectl binary with curl. With this command we install the latest release of kubectl: <br> <code>curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"</code> <br> If the <code>curl</code> 
+                                    command not found message appears, you can install curl with following command: <br> <code>sudo apt install curl</code> <br> and then try it again.</p>
+                                <p class="fs-5 mb-2">Now we can validate the binary with the kubectl checksum. To do that first we need to install the kubectl checksum: <br> <code>curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"</code><br>
+                                    Now we can vaildate the kubectl binary against the checksum file: <br><code>echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check</code> <br> Now you should see a output like this: <code>kubectl: OK</code><br> If the check failed then you should see: <code>kubectl: FAILED</code><br><b>Important: Download the same version of the binary and checksum.</b><img src="../../assets/linux/kubectlOK.png" class="responsive mb-3"><br> 
+                                    Let's start with the download of kubectl: <br><code>sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl</code><br>
+                                    Last but not least, we checkt the version of kubectl: <br> <code>kubectl version --client</code> <br> Make sure to have a output like this (the version car vary): <br><img src="../../assets/linux/kubectlVersion.png" class="responsive mb-3"></p>
+                                
+                                <h2 class="fw-bolder mb-2 mt-5">Conclusion</h2>
+                                <p class="fs-5 mb-2">First step done! We have successfully set up our environment and now you can start with the whole series.<br> Next: <a href="../python/flaskAPI.py">Python: Flask API</a></p>
+                            </section>
+                        </article>
+                        <!-- Comments section-->
+                        <!--<section>
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <!- Comment form->
+                                        <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
+                                        <!-- Comment with nested comments->
+                                        <div class="d-flex mb-4">
+                                            <!-- Parent comment->
+                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                            <div class="ms-3">
+                                                <div class="fw-bold">Commenter Name</div>
+                                                If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
+                                                <!-- Child comment 1->
+                                                <div class="d-flex mt-4">
+                                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                                    <div class="ms-3">
+                                                        <div class="fw-bold">Commenter Name</div>
+                                                        And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
+                                                    </div>
+                                                </div>
+                                                <!-- Child comment 2->
+                                                <div class="d-flex mt-4">
+                                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                                    <div class="ms-3">
+                                                        <div class="fw-bold">Commenter Name</div>
+                                                        When you put money directly to a problem, it makes a good headline.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Single comment->
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                            <div class="ms-3">
+                                                <div class="fw-bold">Commenter Name</div>
+                                                When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>-->
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+        </section>
+    </main>
+    <!-- Footer-->
+    <footer class="bg-dark py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0 text-white">Copyright 2022 &copy; Duluk. All rights Reserved.</div>
+                </div>
+                <div class="col-auto">
+                    <a class="link-light small" href="../../privacy.html">Privacy</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="../../impressum.html">Contact</a>
+                    <!--<span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a> -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
 </html>
