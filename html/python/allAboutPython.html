@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="Python Rest API, Docker, Simple Python project, python project for beginners, python flask, hello world api, how to create docker rest api, how to create a rest api with docker and pyhton, how to create a python rest api with docher" />
         <meta name="author" content="" />
-        <title>How to create a Rest API with Python using Docker?</title>
+        <title>What is Python?</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="../../assets/duluk.ico" />
         <!-- Bootstrap icons-->
@@ -73,27 +73,59 @@
                                 <!-- Post header-->
                                 <header class="mb-4">
                                     <!-- Post title-->
-                                    <h1 class="fw-bolder mb-1">How to set up a Python REST API using Docker?</h1>
+                                    <h1 class="fw-bolder mb-1">All about Python</h1>
                                     <!-- Post meta content-->
-                                    <div class="text-muted fst-italic mb-2">December 27, 2022</div>
+                                    <div class="text-muted fst-italic mb-2">August 1, 2023</div>
                                     <!-- Post categories-->
                                     <a class="badge python text-decoration-none link-light" href="allPython.html">Python</a>
-                                    <a class="badge docker text-decoration-none link-light" href="../docker/allDocker.html">Docker</a>
                                 </header>
                                 <!-- Preview image figure
                                 <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
                                 -->
                                 <!-- Post content-->
                                 <section class="mb-5">
-                                    <h2 class="fw-bolder mb-4 mt-5">How to create simple Flask application?</h2>
-                                    <p class="fs-5 mb-4">Open VS Code at the top go to File "Open Folder" so you can choose a folder to start with. In my example "python-docker". Now you'll see an empty space in VS Code. Go to the terminal and select "New Terminal" and make sure you are in the directory you just created. Type: <pre>python3 -m venv .venv</pre></p>
-                                    <p class="fs-5 mb-4">Now you can see the virtual environment on the left side of your directory. Go to ".venv" and then to the "scripts" folder. This will allow you to see the activate file. In the terminal, type:<pre>cd .venv<br>cd scripts<br>.\activate</pre><p class="fs-5 mb-4">.\activate activates your environment so that you can run any Python code. Select "run once" and your environment is started.<br>Now add these two simple commands to your virtual environment:</p><pre>pip install Flask<br>pip freeze > requirements.txt</pre><p class="fs-5 mb-4">Next, create a <code>app.py</code> script in VS Code. To do that simply navigate to the directory tree and under “Scripts” right click “New File”.<br><img src="../../assets/docker/docker001.png" class="responsive"><br><br>Now let’s add the code below:</p><pre>from flask import Flask<br>app = Flask(__name__)<br><br>@app.route('/')<br>def hello_world():<br>    return 'Hello, Docker!'</pre><p class="fs-5 mb-4">Before you can run it, please exit venv and start it again to make sure that the Python script is recognized. After that, you can test it with the following command:<pre>deactivate<br>.\activate<br>python -m flask run</pre><p class="fs-5 mb-4">Now your website is accessible at localhost port 5000. In your favorite browser, type 172.0.0.1:5000 and you should see the following text: Hello Docker!.<br><img src="../../assets/docker/docker002.png" class="responsive"><br>As you can see, your web requests generate server logs. Now press CTRL+C and type deactivate so you are ready for the next part with Docker.</p></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to create a Dockerfile?</h2>
-                                    <p class="fs-5 mb-4">First, create a Docker file in the same folder as the app.py (Scripts).<br> <img src="../../assets/docker/docker003.png" class="responsive"><br><br>Next, we need to add a line that tells Docker which base image you want to use. You can take your own image, but in this tutorial we will use an official Python image that includes all the tools and packages.<pre># syntax=docker/dockerfile:1<br>FROM python:3.8-slim-buster</pre><p class="fs-5 mb-4">Let's create a working directory to make it easier for us. The working directory is the path for the default location. Now we can use relative paths based on the working directory.</p><pre>WORKDIR /app</pre><p class="fs-5 mb-4">With the <code>COPY</code> command we get the requirements like <code>pip</code> in our image. For example, we can run <code>pip install</code> in the next step. Syntax: First which file to copy and second where to copy the field.</p><pre>COPY requirements.txt requirements.txt</pre><p class="fs-5 mb-4">Use <code>RUN</code> to simply run <code>pip3 install</code>. This works exactly as if we were to run pip3 install locally on our machine, but this time the modules are installed into the image.</p><pre>RUN pip3 install -r requirements.txt</pre><p class="fs-5 mb-4">So we have installed our dependencies and our image is based on Python 3.8<br>The next step is to add our files (app.py and Dockerfile) to the Docker image. <code>COPY</code> will help with this:</p><pre>COPY app.py .<br>COPY Dockerfile .</pre><p class="fs-5 mb-4">Lastly, we need to add a line that says docker should run our Python script. We use the <code>CMD</code> command and need to make our application visible to the outside world by specifying <code>--host=0.0.0.0</code></p><pre>CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]</pre></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to build an image?</h2>
-                                    <p class="fs-5 mb-4">Use the <code>Docker build</code> command to build our Docker image. The build command optionally requires a <code>--tag</code> flag. The tag is used to specify the name of the image and an optional tag in the format <code>name:tag</code>. For simplicity, we'll omit the optional tag for now. If you do not pass a tag, Docker uses "latest" as the default tag.<pre>docker build --tag python-docker .</pre><p>To view your local docker images use <code>docker images</code>:<pre>docker images</pre></p><p>The Output should look like this:<br><img src="../../assets/docker/docker004.png" class="responsive"></p></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to run Docker Container?</h2>
-                                    <p class="fs-5 mb-4">To run an image inside a container, we use the <code>docker run</code> command. We need to add <code>--publish</code> to publish a port for our container, since our container runs in isolation, which includes networking. The format is: <code>host port:container port</code><pre>docker run --publish 8000:5000 python-docker</pre><p class="fs-5 mb-4">After running this command, you’ll notice that you were not returned to the command prompt. This is because our application is a REST server and runs in a loop waiting for incoming requests without returning control back to the OS until we stop the container.<br>Result:<br><img src="../../assets/docker/docker005.png" class="responsive"><br><img src="../../assets/docker/docker006.png" class="responsive"><br><p class="fs-5 mb-4">Instead of “Hello, Docker!” python script, you can add any code you want. For example:<pre>from flask import Flask<br>from flask_restful import Api, Resource<br><br>app =   Flask(__name__)<br><br>api =   Api(app)<br><br>class HelloWorld(Resource):<br>      def get(self):<br>          data={"data":"Hello World"}<br>          return data<br><br>api.add_resource(HelloWorld,'/hello')<br><br>if __name__=='__main__':<br>    app.run(debug=True)</pre><p class="fs-5 mb-4">Output:<br><img src="../../assets/docker/docker007.png" class="responsive"></p>
+                                    <p class="fs-5 mb-4">Python is a popular programming language known for its simplicity, readability, and versatility. 
+                                        It is widely used in various fields, from web development to data science and beyond. Let's explore what Python is, 
+                                        its key features, and some common use cases...</p>
+                                    <h2 class="fw-bolder mb-4 mt-5">What is Python?</h2>
+                                    <p class="fs-5 mb-4">Python is a programming language that people use to tell computers what to do. 
+                                        It is designed to be easy to understand and write, making it suitable for beginners and experienced developers alike. 
+                                        Python's syntax is straightforward, resembling English-like phrases, which helps make the code readable and less confusing.</p>
+                                    <h2 class="fw-bolder mb-4 mt-5">Key Features of Python</h2>
+                                    <h4>Easy to Learn</h4></li>
+                                    <p class="fs-5 mb-4">Python's simple and clean syntax allows developers to focus on solving problems rather than worrying about complex language rules.</p>
+                                    <h4>Versatile</h4>
+                                    <p class="fs-5 mb-4">Python can be used for a wide range of applications, such as web development, data analysis, automation, artificial intelligence, and more.</p>
+                                    <h4>Readable Code</h4>
+                                    <p class="fs-5 mb-4">The code written in Python is easy to read, which makes it easier for developers to collaborate and maintain projects over time.</p>
+                                    <h4>Large Standard Library</h4>
+                                    <p class="fs-5 mb-4">Python comes with a vast collection of pre-built tools and modules that simplify common programming tasks, saving developers time and effort.</p>
+                                    <h4>Dynamically Typed</h4>
+                                    <p class="fs-5 mb-4">Python is a dynamically typed language, meaning developers don't need to specify variable types explicitly. The interpreter figures it out on its own.</p>
+                                    
+                                    <h2 class="fw-bolder mb-4 mt-5">Use Cases for Python</h2>
+                                    <h4>Web Development</h4>
+                                    <p class="fs-5 mb-4">Python has frameworks like Django and Flask, which help developers build websites and web applications quickly and efficiently.</p>
+                                    <h4>Data Analysis</h4>
+                                    <p class="fs-5 mb-4">Python's libraries like Pandas, NumPy, and Matplotlib make it an excellent choice for processing and visualizing large sets of data.</p>
+                                    <h4>Automation</h4>
+                                    <p class="fs-5 mb-4">Python can be used to automate repetitive tasks, such as file operations, data scraping, and sending emails.</p>
+                                    <h4>Artificial Intelligence and Machine Learning</h4>
+                                    <p class="fs-5 mb-4">With libraries like TensorFlow and PyTorch, Python is widely used in developing machine learning models and AI applications.</p>
+                                    <h4>Scripting</h4>
+                                    <p class="fs-5 mb-4">Python is often used for writing scripts to perform specific tasks or automate processes in operating systems and software.</p>
+                                    <h4>Internet of Things (IoT)</h4>
+                                    <p class="fs-5 mb-4">ython can be used to program IoT devices and interact with sensors and data from the physical world.</p>
+                                    <h4>Game Development</h4>
+                                    <p class="fs-5 mb-4">There are game development libraries like Pygame that allow developers to create simple games using Python.</p>
+
+                                    <h2 class="fw-bolder mb-4 mt-5">Conclusion</h2>
+                                    <p class="fs-5 mb-4">Python is a powerful yet easy-to-understand programming language that finds applications in various domains. 
+                                        Its simplicity and versatility have made it a favorite choice for beginners and experienced developers alike. 
+                                        Whether you're building a website, analyzing data, or creating AI-powered applications, Python provides a friendly environment 
+                                        for you to express your ideas and bring them to life. With a supportive community and an ever-growing ecosystem of libraries and tools, 
+                                        Python continues to thrive as one of the most popular languages in the world of programming. 
+                                        So, if you're considering learning a programming language, Python is an excellent place to start!</p>
                                 </section>
                             </article>
                             <!-- Comments section-->

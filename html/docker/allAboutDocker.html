@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Python Rest API, Docker, Simple Python project, python project for beginners, python flask, hello world api, how to create docker rest api, how to create a rest api with docker and pyhton, how to create a python rest api with docher" />
+        <meta name="description" content="Python Rest API, Docker, Simple docker project, docker project for beginners, docker create image, start conatiner, hello world api, how to create docker rest api, how to create a rest api with docker and pyhton, how to create a python rest api with docher" />
         <meta name="author" content="" />
-        <title>How to create a Rest API with Python using Docker?</title>
+        <title>What is Docker?</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="../../assets/duluk.ico" />
         <!-- Bootstrap icons-->
@@ -73,27 +73,57 @@
                                 <!-- Post header-->
                                 <header class="mb-4">
                                     <!-- Post title-->
-                                    <h1 class="fw-bolder mb-1">How to set up a Python REST API using Docker?</h1>
+                                    <h1 class="fw-bolder mb-1">All about Docker</h1>
                                     <!-- Post meta content-->
-                                    <div class="text-muted fst-italic mb-2">December 27, 2022</div>
+                                    <div class="text-muted fst-italic mb-2">July 18, 2023</div>
                                     <!-- Post categories-->
-                                    <a class="badge python text-decoration-none link-light" href="allPython.html">Python</a>
-                                    <a class="badge docker text-decoration-none link-light" href="../docker/allDocker.html">Docker</a>
+                                    <a class="badge docker text-decoration-none link-light" href="allDocker.html">Docker</a>
                                 </header>
                                 <!-- Preview image figure
                                 <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
                                 -->
                                 <!-- Post content-->
                                 <section class="mb-5">
-                                    <h2 class="fw-bolder mb-4 mt-5">How to create simple Flask application?</h2>
-                                    <p class="fs-5 mb-4">Open VS Code at the top go to File "Open Folder" so you can choose a folder to start with. In my example "python-docker". Now you'll see an empty space in VS Code. Go to the terminal and select "New Terminal" and make sure you are in the directory you just created. Type: <pre>python3 -m venv .venv</pre></p>
-                                    <p class="fs-5 mb-4">Now you can see the virtual environment on the left side of your directory. Go to ".venv" and then to the "scripts" folder. This will allow you to see the activate file. In the terminal, type:<pre>cd .venv<br>cd scripts<br>.\activate</pre><p class="fs-5 mb-4">.\activate activates your environment so that you can run any Python code. Select "run once" and your environment is started.<br>Now add these two simple commands to your virtual environment:</p><pre>pip install Flask<br>pip freeze > requirements.txt</pre><p class="fs-5 mb-4">Next, create a <code>app.py</code> script in VS Code. To do that simply navigate to the directory tree and under “Scripts” right click “New File”.<br><img src="../../assets/docker/docker001.png" class="responsive"><br><br>Now let’s add the code below:</p><pre>from flask import Flask<br>app = Flask(__name__)<br><br>@app.route('/')<br>def hello_world():<br>    return 'Hello, Docker!'</pre><p class="fs-5 mb-4">Before you can run it, please exit venv and start it again to make sure that the Python script is recognized. After that, you can test it with the following command:<pre>deactivate<br>.\activate<br>python -m flask run</pre><p class="fs-5 mb-4">Now your website is accessible at localhost port 5000. In your favorite browser, type 172.0.0.1:5000 and you should see the following text: Hello Docker!.<br><img src="../../assets/docker/docker002.png" class="responsive"><br>As you can see, your web requests generate server logs. Now press CTRL+C and type deactivate so you are ready for the next part with Docker.</p></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to create a Dockerfile?</h2>
-                                    <p class="fs-5 mb-4">First, create a Docker file in the same folder as the app.py (Scripts).<br> <img src="../../assets/docker/docker003.png" class="responsive"><br><br>Next, we need to add a line that tells Docker which base image you want to use. You can take your own image, but in this tutorial we will use an official Python image that includes all the tools and packages.<pre># syntax=docker/dockerfile:1<br>FROM python:3.8-slim-buster</pre><p class="fs-5 mb-4">Let's create a working directory to make it easier for us. The working directory is the path for the default location. Now we can use relative paths based on the working directory.</p><pre>WORKDIR /app</pre><p class="fs-5 mb-4">With the <code>COPY</code> command we get the requirements like <code>pip</code> in our image. For example, we can run <code>pip install</code> in the next step. Syntax: First which file to copy and second where to copy the field.</p><pre>COPY requirements.txt requirements.txt</pre><p class="fs-5 mb-4">Use <code>RUN</code> to simply run <code>pip3 install</code>. This works exactly as if we were to run pip3 install locally on our machine, but this time the modules are installed into the image.</p><pre>RUN pip3 install -r requirements.txt</pre><p class="fs-5 mb-4">So we have installed our dependencies and our image is based on Python 3.8<br>The next step is to add our files (app.py and Dockerfile) to the Docker image. <code>COPY</code> will help with this:</p><pre>COPY app.py .<br>COPY Dockerfile .</pre><p class="fs-5 mb-4">Lastly, we need to add a line that says docker should run our Python script. We use the <code>CMD</code> command and need to make our application visible to the outside world by specifying <code>--host=0.0.0.0</code></p><pre>CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]</pre></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to build an image?</h2>
-                                    <p class="fs-5 mb-4">Use the <code>Docker build</code> command to build our Docker image. The build command optionally requires a <code>--tag</code> flag. The tag is used to specify the name of the image and an optional tag in the format <code>name:tag</code>. For simplicity, we'll omit the optional tag for now. If you do not pass a tag, Docker uses "latest" as the default tag.<pre>docker build --tag python-docker .</pre><p>To view your local docker images use <code>docker images</code>:<pre>docker images</pre></p><p>The Output should look like this:<br><img src="../../assets/docker/docker004.png" class="responsive"></p></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to run Docker Container?</h2>
-                                    <p class="fs-5 mb-4">To run an image inside a container, we use the <code>docker run</code> command. We need to add <code>--publish</code> to publish a port for our container, since our container runs in isolation, which includes networking. The format is: <code>host port:container port</code><pre>docker run --publish 8000:5000 python-docker</pre><p class="fs-5 mb-4">After running this command, you’ll notice that you were not returned to the command prompt. This is because our application is a REST server and runs in a loop waiting for incoming requests without returning control back to the OS until we stop the container.<br>Result:<br><img src="../../assets/docker/docker005.png" class="responsive"><br><img src="../../assets/docker/docker006.png" class="responsive"><br><p class="fs-5 mb-4">Instead of “Hello, Docker!” python script, you can add any code you want. For example:<pre>from flask import Flask<br>from flask_restful import Api, Resource<br><br>app =   Flask(__name__)<br><br>api =   Api(app)<br><br>class HelloWorld(Resource):<br>      def get(self):<br>          data={"data":"Hello World"}<br>          return data<br><br>api.add_resource(HelloWorld,'/hello')<br><br>if __name__=='__main__':<br>    app.run(debug=True)</pre><p class="fs-5 mb-4">Output:<br><img src="../../assets/docker/docker007.png" class="responsive"></p>
+                                    <p class="fs-5 mb-4">Docker is a popular technology used to package, distribute, and run applications inside containers. 
+                                        It has revolutionized the way developers deploy and manage their software. Let's dive into what Docker is, its key features, 
+                                        and some common use cases...</p>
+                                    <h2 class="fw-bolder mb-4 mt-5">What is Docker?</h2>
+                                    <p class="fs-5 mb-4">Docker is like a magic box that holds everything your application needs to run. 
+                                        It allows developers to package their applications along with all the necessary tools, libraries, and settings into a single container. 
+                                        This container can then be run on any computer that has Docker, making it easy to move applications 
+                                        between different environments without worrying about compatibility issues.</p>
+                                    <h2 class="fw-bolder mb-4 mt-5">Key Features of Docker</h2>
+                                    <h4>Containerization</h4></li>
+                                    <p class="fs-5 mb-4">Containerization Docker uses containers, which are like self-contained units that package the application and 
+                                        all its dependencies together. This ensures that the application runs the same way on any computer where the container is deployed.</p>
+                                    <h4>Isolation</h4>
+                                    <p class="fs-5 mb-4">Each container is isolated from the host system and other containers, making sure that one application's changes or issues don't affect others.</p>
+                                    <h4>Portability</h4>
+                                    <p class="fs-5 mb-4">Docker containers can run on any platform that supports Docker, whether it's your laptop, a server, or a cloud environment. This portability allows for easy scaling and deployment.</p>
+                                    <h4>Efficiency</h4>
+                                    <p class="fs-5 mb-4">Docker containers are lightweight and share the host system's operating system kernel, consuming fewer resources compared to traditional virtual machines.</p>
+                                    <h4>Version Control</h4>
+                                    <p class="fs-5 mb-4">Docker allows versioning of containers, which means you can keep track of changes and easily roll back to previous versions if needed.</p>
+                                    
+                                    <h2 class="fw-bolder mb-4 mt-5">Use Cases for Docker</h2>
+                                    <h4>Application Deployment</h4>
+                                    <p class="fs-5 mb-4">Docker simplifies the deployment process by ensuring that your application runs consistently across different environments, from development to testing and production.</p>
+                                    <h4>Microservices Architecture</h4>
+                                    <p class="fs-5 mb-4">In a microservices architecture, where applications are built as a collection of small, independent services, Docker helps manage and deploy these services efficiently.</p>
+                                    <h4>Continuous Integration and Continuous Deployment (CI/CD)</h4>
+                                    <p class="fs-5 mb-4">Docker is often used in CI/CD pipelines to automate the building, testing, and deployment of applications.</p>
+                                    <h4>Development Environments</h4>
+                                    <p class="fs-5 mb-4">Docker allows developers to create isolated development environments, ensuring that everyone works on the same setup regardless of their local machine configuration.</p>
+                                    <h4>Server Consolidation</h4>
+                                    <p class="fs-5 mb-4">Docker enables multiple applications to run on a single server without interfering with one another, optimizing resource usage.</p>
+                                    <h4>Testing and QA</h4>
+                                    <p class="fs-5 mb-4">Docker containers make it easy to create test environments that match production, leading to more reliable testing and accurate results.</p>
+
+                                    <h2 class="fw-bolder mb-4 mt-5">Conclusion</h2>
+                                    <p class="fs-5 mb-4">Docker has become an essential tool in modern software development and deployment. It simplifies the way applications are packaged, distributed, and run, providing consistency and portability across different environments. 
+                                        With Docker, developers can spend less time dealing with deployment issues and focus more on building great software. 
+                                        Whether you're a small team developing a web application or a large organization managing complex services, Docker can streamline your development workflow and make the process more efficient. 
+                                        Embrace the "magic box" of Docker and witness how it transforms the way you work with applications!</p>
                                 </section>
                             </article>
                             <!-- Comments section-->

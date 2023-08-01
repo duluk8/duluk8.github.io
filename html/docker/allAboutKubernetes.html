@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Python Rest API, Docker, Simple Python project, python project for beginners, python flask, hello world api, how to create docker rest api, how to create a rest api with docker and pyhton, how to create a python rest api with docher" />
+        <meta name="description" content="Python Rest API, Docker, Simple docker project, docker project for beginners, docker create image, start conatiner, hello world api, how to create docker rest api, how to create a rest api with docker and pyhton, how to create a python rest api with docher" />
         <meta name="author" content="" />
-        <title>How to create a Rest API with Python using Docker?</title>
+        <title>What is Kubernetes?</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="../../assets/duluk.ico" />
         <!-- Bootstrap icons-->
@@ -73,27 +73,59 @@
                                 <!-- Post header-->
                                 <header class="mb-4">
                                     <!-- Post title-->
-                                    <h1 class="fw-bolder mb-1">How to set up a Python REST API using Docker?</h1>
+                                    <h1 class="fw-bolder mb-1">All about Docker</h1>
                                     <!-- Post meta content-->
-                                    <div class="text-muted fst-italic mb-2">December 27, 2022</div>
+                                    <div class="text-muted fst-italic mb-2">August 1, 2023</div>
                                     <!-- Post categories-->
-                                    <a class="badge python text-decoration-none link-light" href="allPython.html">Python</a>
-                                    <a class="badge docker text-decoration-none link-light" href="../docker/allDocker.html">Docker</a>
+                                    <a class="badge kubernetes text-decoration-none link-light" href="allDocker.html">Kubernetes</a>
                                 </header>
                                 <!-- Preview image figure
                                 <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
                                 -->
                                 <!-- Post content-->
                                 <section class="mb-5">
-                                    <h2 class="fw-bolder mb-4 mt-5">How to create simple Flask application?</h2>
-                                    <p class="fs-5 mb-4">Open VS Code at the top go to File "Open Folder" so you can choose a folder to start with. In my example "python-docker". Now you'll see an empty space in VS Code. Go to the terminal and select "New Terminal" and make sure you are in the directory you just created. Type: <pre>python3 -m venv .venv</pre></p>
-                                    <p class="fs-5 mb-4">Now you can see the virtual environment on the left side of your directory. Go to ".venv" and then to the "scripts" folder. This will allow you to see the activate file. In the terminal, type:<pre>cd .venv<br>cd scripts<br>.\activate</pre><p class="fs-5 mb-4">.\activate activates your environment so that you can run any Python code. Select "run once" and your environment is started.<br>Now add these two simple commands to your virtual environment:</p><pre>pip install Flask<br>pip freeze > requirements.txt</pre><p class="fs-5 mb-4">Next, create a <code>app.py</code> script in VS Code. To do that simply navigate to the directory tree and under “Scripts” right click “New File”.<br><img src="../../assets/docker/docker001.png" class="responsive"><br><br>Now let’s add the code below:</p><pre>from flask import Flask<br>app = Flask(__name__)<br><br>@app.route('/')<br>def hello_world():<br>    return 'Hello, Docker!'</pre><p class="fs-5 mb-4">Before you can run it, please exit venv and start it again to make sure that the Python script is recognized. After that, you can test it with the following command:<pre>deactivate<br>.\activate<br>python -m flask run</pre><p class="fs-5 mb-4">Now your website is accessible at localhost port 5000. In your favorite browser, type 172.0.0.1:5000 and you should see the following text: Hello Docker!.<br><img src="../../assets/docker/docker002.png" class="responsive"><br>As you can see, your web requests generate server logs. Now press CTRL+C and type deactivate so you are ready for the next part with Docker.</p></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to create a Dockerfile?</h2>
-                                    <p class="fs-5 mb-4">First, create a Docker file in the same folder as the app.py (Scripts).<br> <img src="../../assets/docker/docker003.png" class="responsive"><br><br>Next, we need to add a line that tells Docker which base image you want to use. You can take your own image, but in this tutorial we will use an official Python image that includes all the tools and packages.<pre># syntax=docker/dockerfile:1<br>FROM python:3.8-slim-buster</pre><p class="fs-5 mb-4">Let's create a working directory to make it easier for us. The working directory is the path for the default location. Now we can use relative paths based on the working directory.</p><pre>WORKDIR /app</pre><p class="fs-5 mb-4">With the <code>COPY</code> command we get the requirements like <code>pip</code> in our image. For example, we can run <code>pip install</code> in the next step. Syntax: First which file to copy and second where to copy the field.</p><pre>COPY requirements.txt requirements.txt</pre><p class="fs-5 mb-4">Use <code>RUN</code> to simply run <code>pip3 install</code>. This works exactly as if we were to run pip3 install locally on our machine, but this time the modules are installed into the image.</p><pre>RUN pip3 install -r requirements.txt</pre><p class="fs-5 mb-4">So we have installed our dependencies and our image is based on Python 3.8<br>The next step is to add our files (app.py and Dockerfile) to the Docker image. <code>COPY</code> will help with this:</p><pre>COPY app.py .<br>COPY Dockerfile .</pre><p class="fs-5 mb-4">Lastly, we need to add a line that says docker should run our Python script. We use the <code>CMD</code> command and need to make our application visible to the outside world by specifying <code>--host=0.0.0.0</code></p><pre>CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]</pre></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to build an image?</h2>
-                                    <p class="fs-5 mb-4">Use the <code>Docker build</code> command to build our Docker image. The build command optionally requires a <code>--tag</code> flag. The tag is used to specify the name of the image and an optional tag in the format <code>name:tag</code>. For simplicity, we'll omit the optional tag for now. If you do not pass a tag, Docker uses "latest" as the default tag.<pre>docker build --tag python-docker .</pre><p>To view your local docker images use <code>docker images</code>:<pre>docker images</pre></p><p>The Output should look like this:<br><img src="../../assets/docker/docker004.png" class="responsive"></p></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to run Docker Container?</h2>
-                                    <p class="fs-5 mb-4">To run an image inside a container, we use the <code>docker run</code> command. We need to add <code>--publish</code> to publish a port for our container, since our container runs in isolation, which includes networking. The format is: <code>host port:container port</code><pre>docker run --publish 8000:5000 python-docker</pre><p class="fs-5 mb-4">After running this command, you’ll notice that you were not returned to the command prompt. This is because our application is a REST server and runs in a loop waiting for incoming requests without returning control back to the OS until we stop the container.<br>Result:<br><img src="../../assets/docker/docker005.png" class="responsive"><br><img src="../../assets/docker/docker006.png" class="responsive"><br><p class="fs-5 mb-4">Instead of “Hello, Docker!” python script, you can add any code you want. For example:<pre>from flask import Flask<br>from flask_restful import Api, Resource<br><br>app =   Flask(__name__)<br><br>api =   Api(app)<br><br>class HelloWorld(Resource):<br>      def get(self):<br>          data={"data":"Hello World"}<br>          return data<br><br>api.add_resource(HelloWorld,'/hello')<br><br>if __name__=='__main__':<br>    app.run(debug=True)</pre><p class="fs-5 mb-4">Output:<br><img src="../../assets/docker/docker007.png" class="responsive"></p>
+                                    <p class="fs-5 mb-4">Kubernetes, often abbreviated as K8s, is an open-source container orchestration platform that manages the deployment, 
+                                        scaling, and operation of containerized applications. It is a powerful tool that simplifies the management of complex container environments. 
+                                        Let's explore what Kubernetes is, its key features, and some common use cases...</p>
+                                    <h2 class="fw-bolder mb-4 mt-5">What is Kubernetes?</h2>
+                                    <p class="fs-5 mb-4">Imagine Kubernetes as a conductor for your container orchestra. It automates the entire process of deploying, scaling, and managing your applications in containers. 
+                                        Instead of dealing with individual containers, Kubernetes takes care of all the coordination, making sure your applications run smoothly and reliably.</p>
+                                    <h2 class="fw-bolder mb-4 mt-5">Key Features of Kubernetes</h2>
+                                    <h4>Orchestration</h4></li>
+                                    <p class="fs-5 mb-4">Kubernetes coordinates the deployment, scaling, and scaling down of containers automatically, 
+                                        ensuring your applications have the right resources and are always available.</p>
+                                    <h4>High Availability</h4>
+                                    <p class="fs-5 mb-4">Kubernetes can replicate containers across multiple servers, providing high availability even if some servers experience issues.</p>
+                                    <h4>Scalability</h4>
+                                    <p class="fs-5 mb-4">It allows you to scale your applications up or down seamlessly, adapting to changing demands and traffic.</p>
+                                    <h4>Self-Healing</h4>
+                                    <p class="fs-5 mb-4">If a container or node fails, Kubernetes can automatically replace it, ensuring your applications are resilient and always up and running.</p>
+                                    <h4>Service Discovery</h4>
+                                    <p class="fs-5 mb-4">Kubernetes has built-in service discovery, making it easy for containers to find and communicate with each other.</p>
+                                    <h4>Rolling Updates</h4>
+                                    <p class="fs-5 mb-4">Kubernetes enables smooth updates and rollbacks of your applications without any downtime.</p>
+                                    
+                                    <h2 class="fw-bolder mb-4 mt-5">Use Cases for Kubernetes</h2>
+                                    <h4>Container Orchestration</h4>
+                                    <p class="fs-5 mb-4">Kubernetes is primarily used for orchestrating containerized applications, managing their lifecycle and ensuring they run as expected.</p>
+                                    <h4>Microservices Deployment</h4>
+                                    <p class="fs-5 mb-4">In a microservices architecture, Kubernetes simplifies the deployment and scaling of individual services independently.</p>
+                                    <h4>Scaling Web Applications</h4>
+                                    <p class="fs-5 mb-4">Kubernetes can automatically scale web applications to handle varying traffic loads, ensuring a consistent user experience.</p>
+                                    <h4>CI/CD Pipelines</h4>
+                                    <p class="fs-5 mb-4">Kubernetes is often integrated into CI/CD pipelines to automate the deployment and testing of applications.</p>
+                                    <h4>Highly Available Applications</h4>
+                                    <p class="fs-5 mb-4">Applications that require high availability and fault tolerance benefit from Kubernetes' ability to distribute containers across multiple nodes.</p>
+                                    <h4>Hybrid and Multi-Cloud Deployments</h4>
+                                    <p class="fs-5 mb-4">Kubernetes can manage applications across different cloud providers and on-premises environments, providing a consistent platform for development and deployment.</p>
+
+                                    <h2 class="fw-bolder mb-4 mt-5">Conclusion</h2>
+                                    <p class="fs-5 mb-4">Kubernetes is a game-changer in the world of containerized applications. 
+                                        Its advanced features for orchestration, scaling, and self-healing make it an essential tool for managing complex container environments. 
+                                        Whether you're running a small application or a large-scale system with thousands of containers, Kubernetes can handle the complexity 
+                                        and ensure your applications run reliably and efficiently. As your container orchestra's conductor, Kubernetes lets you focus on developing 
+                                        great applications while it takes care of the underlying infrastructure and keeps everything in harmony. Embrace Kubernetes to make your 
+                                        containerized applications dance flawlessly to the rhythm of your business needs!</p>
                                 </section>
                             </article>
                             <!-- Comments section-->

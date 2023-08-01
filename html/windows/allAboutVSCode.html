@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Python Rest API, Docker, Simple Python project, python project for beginners, python flask, hello world api, how to create docker rest api, how to create a rest api with docker and pyhton, how to create a python rest api with docher" />
+        <meta name="description" content="Python Rest API, Docker, Simple docker project, docker project for beginners, docker create image, start conatiner, hello world api, how to create docker rest api, how to create a rest api with docker and pyhton, how to create a python rest api with docher" />
         <meta name="author" content="" />
-        <title>How to create a Rest API with Python using Docker?</title>
+        <title>What is Visual Studio Code?</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="../../assets/duluk.ico" />
         <!-- Bootstrap icons-->
@@ -73,27 +73,68 @@
                                 <!-- Post header-->
                                 <header class="mb-4">
                                     <!-- Post title-->
-                                    <h1 class="fw-bolder mb-1">How to set up a Python REST API using Docker?</h1>
+                                    <h1 class="fw-bolder mb-1">All about Visual Studio Code</h1>
                                     <!-- Post meta content-->
-                                    <div class="text-muted fst-italic mb-2">December 27, 2022</div>
+                                    <div class="text-muted fst-italic mb-2">August 1, 2023</div>
                                     <!-- Post categories-->
-                                    <a class="badge python text-decoration-none link-light" href="allPython.html">Python</a>
-                                    <a class="badge docker text-decoration-none link-light" href="../docker/allDocker.html">Docker</a>
+                                    <a class="badge windows text-decoration-none link-light" href="allWindows.html">Windows</a>
+                                    <a class="badge linux text-decoration-none link-light" href="../linux/allLinux.html">Linux</a>
                                 </header>
                                 <!-- Preview image figure
                                 <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
                                 -->
                                 <!-- Post content-->
                                 <section class="mb-5">
-                                    <h2 class="fw-bolder mb-4 mt-5">How to create simple Flask application?</h2>
-                                    <p class="fs-5 mb-4">Open VS Code at the top go to File "Open Folder" so you can choose a folder to start with. In my example "python-docker". Now you'll see an empty space in VS Code. Go to the terminal and select "New Terminal" and make sure you are in the directory you just created. Type: <pre>python3 -m venv .venv</pre></p>
-                                    <p class="fs-5 mb-4">Now you can see the virtual environment on the left side of your directory. Go to ".venv" and then to the "scripts" folder. This will allow you to see the activate file. In the terminal, type:<pre>cd .venv<br>cd scripts<br>.\activate</pre><p class="fs-5 mb-4">.\activate activates your environment so that you can run any Python code. Select "run once" and your environment is started.<br>Now add these two simple commands to your virtual environment:</p><pre>pip install Flask<br>pip freeze > requirements.txt</pre><p class="fs-5 mb-4">Next, create a <code>app.py</code> script in VS Code. To do that simply navigate to the directory tree and under “Scripts” right click “New File”.<br><img src="../../assets/docker/docker001.png" class="responsive"><br><br>Now let’s add the code below:</p><pre>from flask import Flask<br>app = Flask(__name__)<br><br>@app.route('/')<br>def hello_world():<br>    return 'Hello, Docker!'</pre><p class="fs-5 mb-4">Before you can run it, please exit venv and start it again to make sure that the Python script is recognized. After that, you can test it with the following command:<pre>deactivate<br>.\activate<br>python -m flask run</pre><p class="fs-5 mb-4">Now your website is accessible at localhost port 5000. In your favorite browser, type 172.0.0.1:5000 and you should see the following text: Hello Docker!.<br><img src="../../assets/docker/docker002.png" class="responsive"><br>As you can see, your web requests generate server logs. Now press CTRL+C and type deactivate so you are ready for the next part with Docker.</p></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to create a Dockerfile?</h2>
-                                    <p class="fs-5 mb-4">First, create a Docker file in the same folder as the app.py (Scripts).<br> <img src="../../assets/docker/docker003.png" class="responsive"><br><br>Next, we need to add a line that tells Docker which base image you want to use. You can take your own image, but in this tutorial we will use an official Python image that includes all the tools and packages.<pre># syntax=docker/dockerfile:1<br>FROM python:3.8-slim-buster</pre><p class="fs-5 mb-4">Let's create a working directory to make it easier for us. The working directory is the path for the default location. Now we can use relative paths based on the working directory.</p><pre>WORKDIR /app</pre><p class="fs-5 mb-4">With the <code>COPY</code> command we get the requirements like <code>pip</code> in our image. For example, we can run <code>pip install</code> in the next step. Syntax: First which file to copy and second where to copy the field.</p><pre>COPY requirements.txt requirements.txt</pre><p class="fs-5 mb-4">Use <code>RUN</code> to simply run <code>pip3 install</code>. This works exactly as if we were to run pip3 install locally on our machine, but this time the modules are installed into the image.</p><pre>RUN pip3 install -r requirements.txt</pre><p class="fs-5 mb-4">So we have installed our dependencies and our image is based on Python 3.8<br>The next step is to add our files (app.py and Dockerfile) to the Docker image. <code>COPY</code> will help with this:</p><pre>COPY app.py .<br>COPY Dockerfile .</pre><p class="fs-5 mb-4">Lastly, we need to add a line that says docker should run our Python script. We use the <code>CMD</code> command and need to make our application visible to the outside world by specifying <code>--host=0.0.0.0</code></p><pre>CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]</pre></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to build an image?</h2>
-                                    <p class="fs-5 mb-4">Use the <code>Docker build</code> command to build our Docker image. The build command optionally requires a <code>--tag</code> flag. The tag is used to specify the name of the image and an optional tag in the format <code>name:tag</code>. For simplicity, we'll omit the optional tag for now. If you do not pass a tag, Docker uses "latest" as the default tag.<pre>docker build --tag python-docker .</pre><p>To view your local docker images use <code>docker images</code>:<pre>docker images</pre></p><p>The Output should look like this:<br><img src="../../assets/docker/docker004.png" class="responsive"></p></p>
-                                    <h2 class="fw-bolder mb-4 mt-5">How to run Docker Container?</h2>
-                                    <p class="fs-5 mb-4">To run an image inside a container, we use the <code>docker run</code> command. We need to add <code>--publish</code> to publish a port for our container, since our container runs in isolation, which includes networking. The format is: <code>host port:container port</code><pre>docker run --publish 8000:5000 python-docker</pre><p class="fs-5 mb-4">After running this command, you’ll notice that you were not returned to the command prompt. This is because our application is a REST server and runs in a loop waiting for incoming requests without returning control back to the OS until we stop the container.<br>Result:<br><img src="../../assets/docker/docker005.png" class="responsive"><br><img src="../../assets/docker/docker006.png" class="responsive"><br><p class="fs-5 mb-4">Instead of “Hello, Docker!” python script, you can add any code you want. For example:<pre>from flask import Flask<br>from flask_restful import Api, Resource<br><br>app =   Flask(__name__)<br><br>api =   Api(app)<br><br>class HelloWorld(Resource):<br>      def get(self):<br>          data={"data":"Hello World"}<br>          return data<br><br>api.add_resource(HelloWorld,'/hello')<br><br>if __name__=='__main__':<br>    app.run(debug=True)</pre><p class="fs-5 mb-4">Output:<br><img src="../../assets/docker/docker007.png" class="responsive"></p>
+                                    <p class="fs-5 mb-4">VS Code, short for Visual Studio Code, is a popular and powerful source code editor developed by Microsoft. 
+                                        It has gained immense popularity among developers and is widely used in the software development community. 
+                                        Let's delve into its features, use cases, and why it's worth considering for your coding needs.</p>
+                                    <h2 class="fw-bolder mb-4 mt-5">What is Visual Studio Code (VS Code)?</h2>
+                                    <p class="fs-5 mb-4">Visual Studio Code is a free and open-source code editor that is lightweight, extensible, and available on multiple platforms, 
+                                        including Windows, macOS, and Linux. Unlike the full-fledged IDE (Integrated Development Environment) such as Microsoft Visual Studio, VS Code is a 
+                                        streamlined editor focused on providing an efficient coding experience while being customizable to suit various programming languages and development workflows.</p>
+                                    <h2 class="fw-bolder mb-4 mt-5">Features of VS Code</h2>
+                                    <h4>Intuitive User Interface</h4></li>
+                                    <p class="fs-5 mb-4">VS Code boasts a simple and user-friendly interface that allows developers to dive right into their coding tasks without feeling overwhelmed.</p>
+                                    <h4>Language Support</h4>
+                                    <p class="fs-5 mb-4">It offers built-in support for a wide range of programming languages, including popular ones like 
+                                        JavaScript, Python, Java, C++, HTML, CSS, and more. Additionally, you can extend its language support by installing extensions.</p>
+                                    <h4>Extensions</h4>
+                                    <p class="fs-5 mb-4">One of the most compelling features of VS Code is its vast extension ecosystem. 
+                                        There are thousands of extensions available in the VS Code Marketplace that enhance the editor's functionality for specific languages, frameworks, and tools.</p>
+                                    <h4>Integrated Terminal</h4>
+                                    <p class="fs-5 mb-4">The editor includes an integrated terminal, enabling developers to run shell commands and scripts directly within the editor, 
+                                        making it convenient to execute build processes, tests, and other tasks.</p>
+                                    <h4>Debugging Support</h4>
+                                    <p class="fs-5 mb-4">VS Code offers robust debugging capabilities with support for various programming languages. 
+                                        It allows developers to set breakpoints, inspect variables, and step through code execution to identify and fix issues efficiently.</p>
+                                    <h4>Version Control Integration</h4>
+                                    <p class="fs-5 mb-4">With built-in Git integration, you can easily manage version control operations like commit, pull, push, and merge directly from within the editor.</p>
+                                    <h4>IntelliSense and Code Completion</h4>
+                                    <p class="fs-5 mb-4">VS Code provides intelligent code suggestions and auto-completion, which can significantly speed up development by reducing manual typing and catching errors before they occur.</p>
+
+                                    <h2 class="fw-bolder mb-4 mt-5">Use Cases for VS Code</h2>
+                                    <h4>Web Development</h4>
+                                    <p class="fs-5 mb-4">VS Code is widely used by web developers for building websites and web applications. Its excellent support for HTML, CSS, and JavaScript, 
+                                        along with various extensions for popular frameworks like React, Angular, and Vue.js, makes it a go-to choice for web projects.</p>
+                                    <h4>Backend Development</h4>
+                                    <p class="fs-5 mb-4">Whether you're working with Python, Node.js, Java, or any other backend language, 
+                                        VS Code's extensive language support and debugging capabilities make it an ideal editor for backend developers.</p>
+                                    <h4>Data Science</h4>
+                                    <p class="fs-5 mb-4">Data scientists and analysts often use VS Code with extensions for Python or R to analyze data, 
+                                        create visualizations, and develop machine learning models.</p>
+                                    <h4>Cloud and DevOps</h4>
+                                    <p class="fs-5 mb-4">For cloud-native development and DevOps tasks, VS Code can be equipped with extensions for cloud providers like 
+                                        Azure, AWS, and Google Cloud Platform, streamlining deployment and management processes.</p>
+                                    <h4>Mobile Development</h4>
+                                    <p class="fs-5 mb-4">With extensions for frameworks like React Native or Flutter, VS Code can be a productive editor for mobile app developers.</p>
+                                    <h4>IoT Development</h4>
+                                    <p class="fs-5 mb-4">VS Code can be used for programming IoT (Internet of Things) devices and connecting them to various cloud platforms.</p>
+
+                                    <h2 class="fw-bolder mb-4 mt-5">Conclusion</h2>
+                                    <p class="fs-5 mb-4">Visual Studio Code has established itself as a leading code editor due to its versatility, extensive extension library, 
+                                        and the thriving community around it. Whether you're a seasoned developer or just starting your coding journey, VS Code offers a powerful 
+                                        yet accessible environment to write code efficiently, collaborate with teams, and boost productivity. 
+                                        As an open-source project backed by Microsoft and an active community, it continuously evolves and improves, making it a reliable choice for developers worldwide.</p>
                                 </section>
                             </article>
                             <!-- Comments section-->
