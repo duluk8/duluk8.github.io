@@ -11363,5 +11363,9 @@ tr:nth-child(even) {
 }
 
 .kubernetes {
-  background-color: #6CB7EE;
+  background-color: #326CE5;
+}
+
+.vscode {
+  background-color: #007ACC;
 }
