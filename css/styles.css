@@ -11336,3 +11336,32 @@ tr:nth-child(even) {
   min-height: 300px;
   height: auto;
 }
+
+.docker {
+  background-color: #2496ED;
+}
+
+.python {
+  background-color: #3776AB;
+}
+
+.windows {
+  background-color: #0078D6;
+}
+
+.linux {
+  background-color: #D6D6D6;
+  color: #000;
+}
+
+.raspi {
+  background-color: #A22846;
+}
+
+.powershell {
+  background-color: #012456;
+}
+
+.kubernetes {
+  background-color: #6CB7EE;
+}
