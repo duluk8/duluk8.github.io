@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Docker Cheat Sheet, Docker Overview, Learn Docker, Docker Commands, docker run, docker start, docker stop, start with docker" />
+        <meta name="author" content="" />
+        <title>How to create a Rest API with Python using Docker?</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../../assets/duluk.ico" />
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPGTRDJC1Q"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-EPGTRDJC1Q');
+        </script>
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../../css/styles.css" rel="stylesheet" />
+        <link rel="alternate" href="https://duluk.ch" hreflang="en-us" />
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="../../index.html">IT-Duluk</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                    <li><a class="dropdown-item" href="../../blog-home.html">All Projects</a></li>
+                                    <li><a class="dropdown-item" href="../windows/allWindows.html">Windows</a></li>
+                                    <li><a class="dropdown-item" href="../linux/allLinux.html">Linux</a></li>
+                                    <li><a class="dropdown-item" href="../raspberrypi/allRaspberryPi.html">Raspberry Pi</a></li>
+                                    <li><a class="dropdown-item" href="../python/allPython.html">Python</a></li>
+                                    <li><a class="dropdown-item" href="../docker/allDocker.html">Docker</a></li>
+                                    <li><a class="dropdown-item" href="../powershell/allPowerShell.html">PowerShell</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../../pricing.html">Courses</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../../about.html">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Page Content-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-9">
+                            <article>
+                                <header class="mb-4">
+                                    <!-- Post title-->
+                                    <h1 class="fw-bolder mb-1">Ultimate Docker Cheat Sheet</h1>
+                                    <!-- Post meta content-->
+                                    <div class="text-muted fst-italic mb-2">Septemper 5, 2023</div>
+                                    <!-- Post categories-->
+                                    <a class="badge docker text-decoration-none link-light" href="allDocker.html">Docker</a>
+                                </header>
+                                <section class="mb-5">
+                                    <h2 class="fw-bolder mb-4 mt-5">The Docker commands you should know!</h2>
+                                    <table>
+                                        <tr>
+                                          <th>Command</th>
+                                          <th>Description</th>
+                                        </tr>
+                                        <tr>
+                                          <td>docker --version</td>
+                                          <td>Displays the Docker version installed on your system.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker info</td>
+                                          <td>Provides detailed information about the Docker installation, including configuration and system resources.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker run</td>
+                                          <td>Launches a new Docker container from a specified image, allowing you to configure various options like ports, volumes, and environment variables.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker ps</td>
+                                          <td>Lists all running Docker containers, displaying basic information like container ID, image used, and status.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker ps -a</td>
+                                          <td>Lists all Docker containers, including both running and stopped containers, with their details.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker stop</td>
+                                          <td>Stops a running Docker container. You need to specify the container's ID or name.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker start</td>
+                                          <td>Starts a stopped Docker container. You need to specify the container's ID or name.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker restart</td>
+                                          <td>Restarts a running Docker container. You need to specify the container's ID or name.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker rm</td>
+                                          <td>Removes one or more stopped Docker containers. You can specify container IDs or names.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker images</td>
+                                          <td>Lists all locally available Docker images on your system.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker rmi</td>
+                                          <td>Removes one or more Docker images from your system. You can specify image names or IDs.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker pull</td>
+                                          <td>Downloads a Docker image from a registry, such as Docker Hub, to your local system.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker build (docker build -t)</td>
+                                          <td>Builds a Docker image from a Dockerfile. The `-t` flag allows you to tag the image with a name and optional tag.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker exec (-it containername sh)</td>
+                                          <td>Executes a command inside a running Docker container. The `-it` flag opens an interactive session, and you can specify the container's name and shell (e.g., `sh` for a shell).</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker logs</td>
+                                          <td>Displays the logs of a specific container. You need to specify the container's ID or name.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker inspect</td>
+                                          <td>Provides detailed information about a Docker object, such as a container, image, or network. You specify the object's name or ID.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker network</td>
+                                          <td>Manages Docker networks, allowing you to create, list, and configure network settings for containers.</td>
+                                        </tr>
+                                        <tr>
+                                          <td>docker volume</td>
+                                          <td>Manages Docker volumes, which are used for data persistence. You can create, list, and configure volumes for containers.</td>
+                                        </tr>
+                                    </table>
+                                </section>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright 2022 &copy; Duluk. All rights Reserved.</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="../../privacy.html">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="../../impressum.html">Contact</a>
+                        <!--<span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a> -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
