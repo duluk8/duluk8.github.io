@@ -90,12 +90,40 @@
                                 <!-- Preview image figure
                                 <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
                                 -->
+                                <!-- Table of Contents -->
+                                <nav id="toc" class="mb-4">
+                                    <h4>Table of Contents</h4>
+                                    <ul>
+                                        <li>
+                                            <a href="#ssh-setup">SSH-Setup</a>
+                                        </li>
+                                        <li>
+                                            <a href="#dns-setup">DNS-Setup</a>
+                                            <ul>
+                                                <li><a href="#installation-configuration">Installation & configuration</a></li>
+                                                <li><a href="#zones-incl-reverse">Zones incl. reverse</a></li>
+                                                <li><a href="#activate-the-changes">Activate the changes</a></li>
+                                                <li><a href="#configure-clients">Configure clients</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#integrate-an-additional-hard-drive">Integrate an additional hard drive</a></li>
+                                        <li>
+                                            <a href="#docker">Docker</a>
+                                            <ul>
+                                                <li><a href="#dockerinstallation">Installation</a></li>
+                                                <li><a href="#wordpress">Wordpress</a></li>
+                                                <li><a href="#portainer">Portainer</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#apache2">Apache2</a></li>
+                                    </ul>
+                                </nav>
                                 <!-- Post content-->
                                 <section class="mb-5">
-                                    <h2 class="fw-bolder mb-4 mt-5">SSH-Setup</h2>
+                                    <h2 class="fw-bolder mb-4 mt-5" id="ssh-setup">SSH-Setup</h2>
                                     <p class="fs-5 mb-4">Use following commands for password less root login (on vmlp1): <pre>ssh-keygen -t ed25519 # (default 2x enter)<br>ssh-copy-id 192.168.220.11 # (vmls3 dns)<br>ssh 192.168.220.11<br>cat .ssh/authorized_keys # ssh key von vmadmin@vmLP1 kopieren<br>sudo vi /root/.ssh/authorized_keys # ssh key rein kopieren<br>ssh root@192.168.220.11</pre> </p>
-                                    <h2 class="fw-bolder mb-4 mt-5">DNS-Setup</h2>
-                                    <h3 class="mb-1 mt-1">Installation & configuration</h3>
+                                    <h2 class="fw-bolder mb-4 mt-5" id="dns-setup">DNS-Setup</h2>
+                                    <h3 class="mb-1 mt-1" id="installation-configuration">Installation & configuration</h3>
                                     <p class="fs-5 mb-4">Install bind9 with following command (local without docker):<br> <code>sudo apt install bind9</code><br>Now configure the bind files like shown below. Pay attention to the syntax if it isn't working try to debug with <code>sudo named-checkconf /etc/bind/named.conf</code>. It will show you the syntax error...<br><code>cd /etc/bind<br>vi named.conf.options</code><pre>
 options {
     directory "/var/cache/bind";
@@ -126,7 +154,7 @@ options {
     listen-on-v6 { any; };
 };
 </pre></p>
-                                    <h3 class="mb-1 mt-1">Zones incl. reverse</h3>
+                                    <h3 class="mb-1 mt-1" id="zones-incl-reverse">Zones incl. reverse</h3>
                                     <p class="fs-5 mb-4">Modify the following files for the required zones<br><code>vi named.conf.local</code><pre>
 zone "winter.camp" {
     type master;
@@ -170,9 +198,9 @@ $TTL 86400
 1 IN PTR vmlf1.winter.camp.
 11 IN PTR vmls1.winter.camp.
                                     </pre></p>
-                                    <h3 class="mb-1 mt-1">Activate the changes</h3>
+                                    <h3 class="mb-1 mt-1" id="activate-the-changes">Activate the changes</h3>
                                     <p class="fs-5 mb-4">Restart the bind9 service with either bind9 or named and then test it with the following commands:<br><code>systemctl restart bind9<br>nslookup www.winter.camp 192.168.220.11<br>nslookup 192.168.220.1 192.168.220.11</code><br>If you need to debug the service this command cloud help: <code>journalctl -xeu named.service</code></p>
-                                    <h3 class="mb-1 mt-1">Configure clients</h3>
+                                    <h3 class="mb-1 mt-1" id="configure-clients">Configure clients</h3>
                                     <p class="fs-5 mb-4">To make the dns work for your environment use following commands on servers (without GUI):<br><code>cd /etc/netplan<br>vi 00-eth0.yaml</code> Important: search & addresses<pre>
 network:          
 version: 2        
@@ -186,12 +214,12 @@ ethernets:
         addresses: [ 192.168.220.11 ]
                                     </pre></p>   
                                     <p class="fs-5 mb-4">On machines with GUI do this steps:<br>Open the Terminal:<br><code>sudo apt install network-manager-gnome<br>nm-connection-editor</code><br>Now select your ethernet (typically eth0) then go to IPv4 Settings and under Searchdomain type in: winter.camp then save. Now you need to disable and then enable your connection. So the changes take effect.</p>                            
-                                    <h2 class="fw-bolder mb-4 mt-5">Integrate an additional hard drive</h2>
-                                    <h2 class="fw-bolder mb-4 mt-5">Docker</h2>
-                                    <h3 class="mb-1 mt-1">Installation</h3>
-                                    <h3 class="mb-1 mt-1">Wordpress</h3>
-                                    <h3 class="mb-1 mt-1">Portainer</h3>
-                                    <h2 class="fw-bolder mb-4 mt-5">Apache2</h2>
+                                    <h2 class="fw-bolder mb-4 mt-5" id="integrate-an-additional-hard-drive">Integrate an additional hard drive</h2>
+                                    <h2 class="fw-bolder mb-4 mt-5" id="docker">Docker</h2>
+                                    <h3 class="mb-1 mt-1" id="dockerinstallation">Installation</h3>
+                                    <h3 class="mb-1 mt-1" id="wordpress">Wordpress</h3>
+                                    <h3 class="mb-1 mt-1" id="portainer">Portainer</h3>
+                                    <h2 class="fw-bolder mb-4 mt-5" id="apache2">Apache2</h2>
                                 </section>
                             </article>
                             <!-- Comments section-->
