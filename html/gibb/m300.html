@@ -215,11 +215,42 @@ ethernets:
                                     </pre></p>   
                                     <p class="fs-5 mb-4">On machines with GUI do this steps:<br>Open the Terminal:<br><code>sudo apt install network-manager-gnome<br>nm-connection-editor</code><br>Now select your ethernet (typically eth0) then go to IPv4 Settings and under Searchdomain type in: winter.camp then save. Now you need to disable and then enable your connection. So the changes take effect.</p>                            
                                     <h2 class="fw-bolder mb-4 mt-5" id="integrate-an-additional-hard-drive">Integrate an additional hard drive</h2>
+                                    <p class="fs-5 mb-4">Look which disks are availlable:<br><code>sudo fdisk -l</code><br>Now look at something like /dev/sdb or /dev/sdc (choose the bigger one). Next, we partition the disc:<br><code>sudo fdisk /dev/sdc</code> Then n (new partition), next p (primary), default, default, default, next w (write).<br>Next, we gonna format the /dev/sdc1 with:<br><code>sudo mkfs.ext4 /dev/sdc1</code><br>
+                                    Use the /www directory as the mount directory (read carefully which directory).<br><code>mkdir /www</code><br>Next, we bind the partition: <code>sudo mount /dev/sdc1 /www</code><br>To mount automatically by starting edit following file:<br><code>sudo vi /etc/fstab</code><br>Add following line: <code>/dev/sdc1  /www  ext4  defaults  0  2</code><br>For the changes to take effect run this command: <code>mount -a</code> <br>As a last step test it with <code>df</code> you should see something like this: <code>/dev/sdc1        8153564      36   7717768   1% /www</code></p>
                                     <h2 class="fw-bolder mb-4 mt-5" id="docker">Docker</h2>
                                     <h3 class="mb-1 mt-1" id="dockerinstallation">Installation</h3>
+                                    <p class="fs-5 mb-4">To install docker use following command: <code>sudo apt install docker.io</code></p>
                                     <h3 class="mb-1 mt-1" id="wordpress">Wordpress</h3>
+                                    <p class="fs-5 mb-4"><a href="https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-docker-compose">digitalocean tutorial</a></p>
                                     <h3 class="mb-1 mt-1" id="portainer">Portainer</h3>
+                                    <p class="fs-5 mb-4">First create the docker volume: <code>docker volume create portainer_data</code><br>Now start the container with docker run: <code>docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest</code><br>Now you should see the container with <code>docker ps</code> and portainer should be available under <a href="https://192.168.220.11:9443">https://192.168.220.11:9443</a>. Now just login in and portainer is set up</p>
                                     <h2 class="fw-bolder mb-4 mt-5" id="apache2">Apache2</h2>
+                                    <p class="fs-5 mb-4">Place the web content (html files etc.) in the required directory (/www in this example). If it's a .tar.gz file extract it with: <code>tar xvzf winter-camp.tar.gz</code><br>If there should be a owner for the directories (e.g. /www/www.winter.camp) then use following commands (all in the /www dir):<br><code>useradd -m operatingweb<br>groupadd wwwadmin<br>usermod -aG wwwadmin operatingweb<br>chown -R operatingweb:wwwadmin www.winter.camp ku1.winter.camp ku2.winter.camp</code>
+                                    <br>Next we navigate to the apache2 folder: <code>cd /etc/apache2</code><br>Make gloub modifications with <code>vi apache2.conf</code> and add following code snippet (remove "):<pre>
+<"Directory /www>
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Require all granted
+<"/Directory>
+                                    </pre></p>
+                                    <p class="fs-5 mb-4">Next create the config files for each domain <code>cd sites-available<br>cp 000-default.conf winter.camp.conf</code><br>Now modify the winter.camp.conf with <code>vi winter.camp.conf</code> and add:<br><pre>
+<"VirtualHost *:80>
+    ServerName www.winter.camp
+    serveralias winter.camp
+
+    ServerAdmin webmaster@localhost
+    DocumentRoot /www/www.winter.camp
+
+    ErrorDocument 404 /err/404.html
+
+    ErrorLog ${APACHE_LOG_DIR}/www-error.log
+    CustomLog ${APACHE_LOG_DIR}/www-access.log combined
+
+<"/VirtualHost>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+                                    </pre></p>
+                                    <p class="fs-5 mb-4">For additional sites do the same with for example ku1.winter.camp.conf and so on...<br><br>After that enable your sites with <code>a2ensite winter.camp<br>a2ensite ku1.winter.camp<br>...<br>systemctl restart apache2</code><br>So now your changes should be active.<br>Test it with <code>systemctl status apache2</code> and of course over the browser.</p>
                                 </section>
                             </article>
                             <!-- Comments section-->
