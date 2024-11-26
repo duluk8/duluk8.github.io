@@ -1,16 +1,92 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-      <meta charset='utf-8'>
-      <meta name='viewport' content='width=device-width'>
-      <title>Delete Account</title>
-      <style> body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding:1em; } </style>
-    </head>
-    <body>
-        <strong>Request deletion of your account and the associated data</strong>
-        <p>Way 1:</p>
-        <p>You can delete your Account with all the associated data in the PushUp Champ app under Profile and there you should see a "Delete Account" Button.</p>
-        <p>Way 2:</p>
-        <p>Send an E-Mail to <a href= "mailto:it.duluk@gmail.com">it.duluk@gmail.com</a> with your username and password (the E-Mail should match the one of your account). Then we will check the credentials and we will give you an update also per E-Mail.</p>
-    </body>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>PushUp Champ</title>
+    <link rel="icon" type="image/x-icon" href="assets/PushUpChamp.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+      <div class="container px-5">
+          <a class="navbar-brand fw-bold" href="index.html">PushUp Champ</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+              aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              Menu
+              <i class="bi-list"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                  <li class="nav-item"><a class="nav-link me-lg-3" data-translate="features" href="index.html#features">Features</a></li>
+                  <li class="nav-item"><a class="nav-link me-lg-3" data-translate="deleteAccount" href="deleteAccount.html">Delete Account</a></li>
+                  <!-- <li class="nav-item"><a class="nav-link me-lg-3" href="#download">Download</a></li> -->
+                  <!-- Add language switcher buttons -->
+                  <div class="language-switcher">
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" onclick="switchLanguage('en')">EN</button>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" onclick="switchLanguage('de')">DE</button>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" onclick="switchLanguage('ch-be')">CH</button>
+                  </div>
+              </ul>
+              <!--<button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                      <span class="d-flex align-items-center">
+                          <i class="bi-chat-text-fill me-2"></i>
+                          <span class="small">Send Feedback</span>
+                      </span>
+                  </button>-->
+          </div>
+      </div>
+  </nav>
+  <section class="bg-light">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+            <div class="col-12 col-lg-5">
+              <strong data-translate="deletionRequest">Request deletion of your account and the associated data</strong>
+              <p></p>
+              <b data-translate="Way1" style="margin-bottom: 0px;">Way 1:</b>
+              <p data-translate="deletionRequest1">You can delete your Account with all the associated data in the PushUp Champ app under Profile and there you should see a "Delete Account" Button.</p>
+              <b data-translate="Way2" style="margin-bottom: 0px;">Way 2:</b>
+              <p data-translate="deletionRequest2.1" style="margin-bottom: 0px;">Send an E-Mail to</p>
+              <a href= "mailto:it.duluk@gmail.com">it.duluk@gmail.com</a> 
+              <p data-translate="deletionRequest2.2">with your username and password (the E-Mail should match the one of your account). Then we will check the credentials and we will give you an update also per E-Mail.</p>
+            </div>  
+        </div>
+    </div>
+  </section>
+  <footer class="bg-black text-center py-5">
+    <div class="container px-5">
+        <div class="text-white-50 small">
+            <div class="mb-2">&copy; Copyright 2023 © Duluk. All rights Reserved.</div>
+            <a href="privacy.html" data-translate="privacy">Privacy</a>
+            <span class="mx-1">&middot;</span>
+            <a href="terms.html" data-translate="terms">Terms</a>
+            <!-- <span class="mx-1">&middot;</span>
+                <a href="#!">FAQ</a> -->
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+</body>
 </html>
