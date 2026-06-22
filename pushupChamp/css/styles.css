@@ -11160,3 +11160,26 @@ footer a:hover, footer a:active, footer a:focus {
     max-width: 17rem;
   }
 }
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-left: 0.5rem;
+}
+
+.lang-btn {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.2rem 0.4rem;
+  line-height: 1;
+}
+
+.lang-btn:hover {
+  border-color: currentColor;
+  opacity: 0.8;
+}

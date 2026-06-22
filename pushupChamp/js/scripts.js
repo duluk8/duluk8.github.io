@@ -14,7 +14,7 @@ const translations = {
         'features': 'Features',
         'deleteAccount': 'Delete Account',
         'mainHeading': 'Achieve Fitness Goals with PushUp Champ.',
-        'mainSubheading': 'Track your push-ups, set challenges and reach new heights. Download now and start your fitness journey! You vs. You ;)',
+        'mainSubheading': 'Track your push-ups, set challenges and reach new heights. Download now and start your fitness journey!',
         'comingSoon': 'Coming Soon!',
         'comingSoonText': 'Our app will be available in the store soon. Stay tuned! For updates: @pushup_champ on Instagram',
         'closeButton': 'Close',
@@ -32,9 +32,9 @@ const translations = {
         'deletionRequest': 'Request deletion of your account and the associated data',
         'Way1': 'Way 1',
         'Way2': 'Way 2',
-        'deletionRequest1': 'You can delete your Account with all the associated data in the PushUp Champ app under "Profile" and there you should see a "Delete Account" Button.',
+        'deletionRequest1': 'You can delete your Account with all the associated data in the PushUp Champ app under "Settings" at the right top corner and there you should see a "Delete Account" Button.',
         'deletionRequest2.1': 'Send an E-Mail to ',
-        'deletionRequest2.2': 'with your username and password (the E-Mail should match the one of your account). Then we will check the credentials and we will give you an update also per E-Mail.',
+        'deletionRequest2.2': 'with your username and password (the E-Mail should match the one of your account). Then we will check the credentials and we will give you an update per E-Mail.',
         'privacy': 'Privacy',
         'terms': 'Terms'
     },
@@ -61,9 +61,9 @@ const translations = {
         'deletionRequest': 'Die Löschung Ihres Kontos und der damit verbundenen Daten beantragen',
         'Way1': 'Weg 1',
         'Way2': 'Weg 2',
-        'deletionRequest1': 'Sie können Ihren Account mit allen dazugehörigen Daten in der PushUp Champ App unter "Profil" löschen und dort sollten Sie einen „Account löschen“ Button sehen.',
+        'deletionRequest1': 'Sie können Ihren Account mit allen dazugehörigen Daten in der PushUp Champ App unter "Einstellungen" oben rechts löschen und dort sollten Sie einen „Account löschen“ Button sehen.',
         'deletionRequest2.1': 'Senden Sie eine E-Mail an ',
-        'deletionRequest2.2': 'mit Ihrem Benutzernamen und Passwort (die E-Mail sollte mit der Ihres Kontos übereinstimmen). Wir werden dann die Zugangsdaten prüfen und Ihnen ein Update auch per E-Mail zukommen lassen.',
+        'deletionRequest2.2': 'mit Ihrem Benutzernamen und Passwort (die E-Mail sollte mit der Ihres Kontos übereinstimmen). Wir werden dann die Zugangsdaten prüfen und Ihnen ein Update per E-Mail zukommen lassen.',
         'privacy': 'Datenschutz',
         'terms': 'AGB'
     },
@@ -90,9 +90,9 @@ const translations = {
         'deletionRequest': 'Die Löschung Ihres Kontos und der damit verbundenen Daten beantragen',
         'Way1': 'Weg 1',
         'Way2': 'Weg 2',
-        'deletionRequest1': 'Sie können Ihren Account mit allen dazugehörigen Daten in der PushUp Champ App unter "Profil" löschen und dort sollten Sie einen „Account löschen“ Button sehen.',
+        'deletionRequest1': 'Sie können Ihren Account mit allen dazugehörigen Daten in der PushUp Champ App unter "Einstellungen" oben rechts löschen und dort sollten Sie einen „Account löschen“ Button sehen.',
         'deletionRequest2.1': 'Senden Sie eine E-Mail an ',
-        'deletionRequest2.2': 'mit Ihrem Benutzernamen und Passwort (die E-Mail sollte mit der Ihres Kontos übereinstimmen). Wir werden dann die Zugangsdaten prüfen und Ihnen ein Update auch per E-Mail zukommen lassen.',
+        'deletionRequest2.2': 'mit Ihrem Benutzernamen und Passwort (die E-Mail sollte mit der Ihres Kontos übereinstimmen). Wir werden dann die Zugangsdaten prüfen und Ihnen ein Update per E-Mail zukommen lassen.',
         'privacy': 'Datenschutz',
         'terms': 'AGB'
     },
@@ -119,9 +119,9 @@ const translations = {
         'deletionRequest': 'Richiedi l\'eliminazione del tuo account e dei dati associati',
         'Way1': 'Metodo 1',
         'Way2': 'Metodo 2',
-        'deletionRequest1': 'Puoi eliminare il tuo account con tutti i dati associati nell\'app PushUp Champ sotto "Profilo", dove dovresti vedere un pulsante "Elimina account".',
+        'deletionRequest1': 'Puoi eliminare il tuo account con tutti i dati associati nell\'app PushUp Champ sotto "Impostazioni" in alto a destra, dove dovresti vedere un pulsante "Elimina account".',
         'deletionRequest2.1': 'Invia un\'e-mail a ',
-        'deletionRequest2.2': 'con il tuo nome utente e la tua password (l\'e-mail deve corrispondere a quella del tuo account). Controlleremo quindi le credenziali e ti invieremo un aggiornamento anche via e-mail.',
+        'deletionRequest2.2': 'con il tuo nome utente e la tua password (l\'e-mail deve corrispondere a quella del tuo account). Controlleremo quindi le credenziali e ti invieremo un aggiornamento via e-mail.',
         'privacy': 'Privacy',
         'terms': 'Termini'
     },
@@ -148,9 +148,9 @@ const translations = {
         'deletionRequest': 'Demander la suppression de ton compte et des données associées',
         'Way1': 'Méthode 1',
         'Way2': 'Méthode 2',
-        'deletionRequest1': 'Tu peux supprimer ton compte avec toutes les données associées dans l’app PushUp Champ sous "Profil", où tu devrais voir un bouton "Supprimer le compte".',
+        'deletionRequest1': 'Tu peux supprimer ton compte avec toutes les données associées dans l’app PushUp Champ sous "Paramètres" en haut à droite, où tu devrais voir un bouton "Supprimer le compte".',
         'deletionRequest2.1': 'Envoie un e-mail à ',
-        'deletionRequest2.2': 'avec ton nom d’utilisateur et ton mot de passe (l’e-mail doit correspondre à celui de ton compte). Nous vérifierons ensuite les identifiants et t’enverrons aussi une mise à jour par e-mail.',
+        'deletionRequest2.2': 'avec ton nom d’utilisateur et ton mot de passe (l’e-mail doit correspondre à celui de ton compte). Nous vérifierons ensuite les identifiants et t’enverrons une mise à jour par e-mail.',
         'privacy': 'Confidentialité',
         'terms': 'Conditions'
     }
@@ -256,7 +256,7 @@ window.addEventListener('DOMContentLoaded', event => {
     createModal();
 
     // Set initial language
-    const preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    const preferredLanguage = localStorage.getItem('preferredLanguage') || 'de';
     switchLanguage(preferredLanguage);
 
     // Add click handlers for app store links
