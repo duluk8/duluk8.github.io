@@ -10,6 +10,14 @@
  * Native Google Consent Mode v2 Cookie Banner for IT-Duluk
  * Works seamlessly with Bootstrap 5
  */
+
+// Ensure a gtag() function always exists so the banner works (and never
+// throws) even on pages that do not load the Google Analytics snippet.
+window.dataLayer = window.dataLayer || [];
+if (typeof window.gtag !== "function") {
+    window.gtag = function () { window.dataLayer.push(arguments); };
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     // If the user hasn't made a choice yet, display the banner
     if (!localStorage.getItem("cookie-consent")) {
