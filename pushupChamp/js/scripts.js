@@ -300,3 +300,17 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 });
+
+// Forward the visitor's source (e.g. ?utm_source=tiktok) to the Play Store install referrer so Play Console can attribute installs per channel. Cookie-free.
+(function () {
+    const params = new URLSearchParams(window.location.search);
+    const clean = (v, fallback) => ((v || fallback).replace(/[^a-z0-9_-]/gi, '').slice(0, 40) || fallback);
+    const source = clean(params.get('utm_source') || params.get('src'), 'website');
+    const campaign = clean(params.get('utm_campaign'), 'landingpage');
+    const referrer = encodeURIComponent('utm_source=' + source + '&utm_medium=landingpage&utm_campaign=' + campaign);
+    document.querySelectorAll('a[href^="https://play.google.com/store/apps/details"]').forEach(function (link) {
+        if (!link.href.includes('referrer=')) {
+            link.href += '&referrer=' + referrer;
+        }
+    });
+})();
