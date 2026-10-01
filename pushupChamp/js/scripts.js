@@ -314,3 +314,14 @@ window.addEventListener('DOMContentLoaded', event => {
         }
     });
 })();
+
+// Same for the App Store: App Store Connect campaign link (provider token pt + campaign name ct = traffic source), so installs show up per channel in App Analytics. Cookie-free.
+(function () {
+    const params = new URLSearchParams(window.location.search);
+    const source = ((params.get('utm_source') || params.get('src') || 'website').replace(/[^a-z0-9_-]/gi, '').slice(0, 40) || 'website').toLowerCase();
+    document.querySelectorAll('a[href^="https://apps.apple.com/"]').forEach(function (link) {
+        if (!link.href.includes('pt=')) {
+            link.href += (link.href.includes('?') ? '&' : '?') + 'pt=129082006&ct=' + source + '&mt=8';
+        }
+    });
+})();
