@@ -36,7 +36,8 @@ const translations = {
         'deletionRequest2.1': 'Send an E-Mail to ',
         'deletionRequest2.2': 'with your username and password (the E-Mail should match the one of your account). Then we will check the credentials and we will give you an update per E-Mail.',
         'privacy': 'Privacy',
-        'terms': 'Terms'
+        'terms': 'Terms',
+        'prizeTerms': 'Prize Terms'
     },
     'de': {
         'menu': 'Menü',
@@ -65,7 +66,8 @@ const translations = {
         'deletionRequest2.1': 'Senden Sie eine E-Mail an ',
         'deletionRequest2.2': 'mit Ihrem Benutzernamen und Passwort (die E-Mail sollte mit der Ihres Kontos übereinstimmen). Wir werden dann die Zugangsdaten prüfen und Ihnen ein Update per E-Mail zukommen lassen.',
         'privacy': 'Datenschutz',
-        'terms': 'AGB'
+        'terms': 'AGB',
+        'prizeTerms': 'Teilnahmebedingungen'
     },
     'ch-be': {
         'menu': 'Menü',
@@ -94,7 +96,8 @@ const translations = {
         'deletionRequest2.1': 'Senden Sie eine E-Mail an ',
         'deletionRequest2.2': 'mit Ihrem Benutzernamen und Passwort (die E-Mail sollte mit der Ihres Kontos übereinstimmen). Wir werden dann die Zugangsdaten prüfen und Ihnen ein Update per E-Mail zukommen lassen.',
         'privacy': 'Datenschutz',
-        'terms': 'AGB'
+        'terms': 'AGB',
+        'prizeTerms': 'Teilnahmebedingige'
     },
     'it': {
         'menu': 'Menu',
@@ -123,7 +126,8 @@ const translations = {
         'deletionRequest2.1': 'Invia un\'e-mail a ',
         'deletionRequest2.2': 'con il tuo nome utente e la tua password (l\'e-mail deve corrispondere a quella del tuo account). Controlleremo quindi le credenziali e ti invieremo un aggiornamento via e-mail.',
         'privacy': 'Privacy',
-        'terms': 'Termini'
+        'terms': 'Termini',
+        'prizeTerms': 'Condizioni dei premi'
     },
     'fr': {
         'menu': 'Menu',
@@ -152,7 +156,8 @@ const translations = {
         'deletionRequest2.1': 'Envoie un e-mail à ',
         'deletionRequest2.2': 'avec ton nom d’utilisateur et ton mot de passe (l’e-mail doit correspondre à celui de ton compte). Nous vérifierons ensuite les identifiants et t’enverrons une mise à jour par e-mail.',
         'privacy': 'Confidentialité',
-        'terms': 'Conditions'
+        'terms': 'Conditions',
+        'prizeTerms': 'Conditions des prix'
     }
 };
 
